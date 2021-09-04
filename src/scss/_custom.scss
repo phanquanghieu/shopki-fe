@@ -1,0 +1,20 @@
+body {
+  background-color: $gray-100;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: inherit;
+    opacity: 0.8;
+  }
+}
+
+.text-base-color {
+  color: $base-color !important;
+}
+
+.bg-base-color {
+  background-color: $base-color !important;
+}
