@@ -1,0 +1,23 @@
+#login-form{
+  .banner-img{
+    width: 500px;
+    height: 500px;
+    background-color: #ECECEC;
+    margin-right: 20px;
+  }
+  .form-login{
+    .form-input{
+      margin-bottom: 30px;
+      .user-name{
+        margin-bottom: 30px;
+      }
+      .password{
+        .show-pass{
+          top: 3px;
+          right: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
