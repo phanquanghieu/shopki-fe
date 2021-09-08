@@ -1,0 +1,24 @@
+#header-seller{
+  margin-top: 12px;
+  .container{
+    .logo{
+      width: 120px;
+      height: 50px;
+      background-color: #ECECEC;
+    }
+    .login-register{
+      button{
+        width: 150px;
+        height: 40px;
+        border-radius: 12px;
+        border: 1px solid #00b14f;
+        background-color: #ffffff;
+        &:first-child{
+          margin-right: 12px;
+          background-color: #00b14f;
+        }
+      }
+    }
+  }
+}
+
