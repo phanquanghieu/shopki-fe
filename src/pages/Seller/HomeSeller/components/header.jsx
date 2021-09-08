@@ -1,5 +1,6 @@
 import React from 'react'
 import '../homeStyle/header.scss'
+import { Link } from 'react-router-dom'
 function Header(props) {
   return (
     <div id="header-seller" className="header-seller">
@@ -8,7 +9,7 @@ function Header(props) {
 
         </div>
         <div className="login-register">
-            <button className="btn-login">Đăng nhập</button>
+            <Link to="/seller/login"><button className="btn-login">Đăng nhập</button></Link>
             <button className="btn-register">Đăng kí</button>
         </div>
       </div>
