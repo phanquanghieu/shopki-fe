@@ -1,18 +1,35 @@
 #register-form{
   .header-login{
-    padding: 20px 16px 0 16px;
-    background-color: #ffffff;
+    padding: 20px 16px 20px 16px;
+    background-color: #f28466;
     .logo{
-      img{
+      a{
+        flex: 0 0 auto;
+        width: 10rem;
+        padding: 0 0 0 0.5rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 2.5rem;
         cursor: pointer;
-        margin-right: 20px;
-        width: 120px;
-        height: 60px;
+        color: #ffffff;
       }
-      h2{
-        font-size: 30px;
-        color: #000000;
+
+      .nav{
+        h2{
+          cursor: pointer;
+          font-size: 30px;
+          color: #000000;
+        }
+        a{
+          font-size: 14px;
+          margin: 0;
+          cursor: pointer;
+          &:hover{
+            color: #ffffff;
+          }
+        }
       }
+
     }
     .help{
       cursor: pointer;
@@ -28,6 +45,12 @@
     height: 500px;
     background-color: #ECECEC;
     margin-right: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    img{
+      width: 500px;
+      height: 500px;
+    }
   }
   .form-login{
     .title{
@@ -37,6 +60,7 @@
     .form-input{
       margin-bottom: 20px;
       input{
+        width: 300px;
         border-radius: 8px;
         padding: 4px 16px;
         outline: none;
@@ -46,12 +70,16 @@
           outline: none;
         }
       }
+      p{
+        margin-bottom: 8px;
+        color: #ffffff;
+      }
       .user-name{
         margin-bottom: 30px;
       }
       .password{
         .show-pass{
-          top: 3px;
+          top: 35px;
           right: 5px;
           cursor: pointer;
         }
@@ -59,7 +87,7 @@
       .re-password{
         margin-top: 30px;
         .show-pass{
-          top: 3px;
+          top: 35px;
           right: 5px;
           cursor: pointer;
         }
