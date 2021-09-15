@@ -37,7 +37,7 @@ function App() {
             render={(props) => <LoginSeller {...props} />}
           />
           <Route
-            path='/seller/signup'
+            path='/seller/register'
             exact
             name='Seller Login '
             render={(props) => <SignUpSeller {...props} />}

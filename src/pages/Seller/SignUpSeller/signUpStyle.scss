@@ -1,4 +1,4 @@
-#login-form{
+#register-form{
   .header-login{
     padding: 20px 16px 0 16px;
     background-color: #ffffff;
@@ -50,6 +50,14 @@
         margin-bottom: 30px;
       }
       .password{
+        .show-pass{
+          top: 3px;
+          right: 5px;
+          cursor: pointer;
+        }
+      }
+      .re-password{
+        margin-top: 30px;
         .show-pass{
           top: 3px;
           right: 5px;
