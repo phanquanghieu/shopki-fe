@@ -1,6 +1,6 @@
 import Slider from "react-slick";
 import '../homeStyle/banner.scss'
-import { useRef } from 'react'
+import { useEffect } from 'react'
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -33,6 +33,9 @@ function SampleNextArrow(props) {
 
 
 function Banner(props){
+  useEffect(()=>{
+    console.log(props)
+  })
   const settings = {
     dots: false,
     infinite: true,
@@ -48,13 +51,13 @@ function Banner(props){
        <div className="w-100 overflow-hidden position-relative">
          <Slider {...settings}>
            <div className="items d-flex justify-content-center">
-             <img src="/assets/images/banner-head.jpg"/>
+             <img src="/assets/images/banner-head.jpg" alt="banner"/>
            </div>
            <div className="items d-flex justify-content-center">
-             <img src="/assets/images/banner-head2.jpg"/>
+             <img src="/assets/images/banner-head2.jpg" alt="banner"/>
            </div>
            <div className="items d-flex justify-content-center">
-             <img src="/assets/images/banner-head3.jpg"/>
+             <img src="/assets/images/banner-head3.jpg" alt="banner"/>
            </div>
          </Slider>
       </div>

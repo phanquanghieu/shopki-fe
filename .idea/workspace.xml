@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/homeStyle/banner.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/signUpStyle.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/SellerLayout/SellerLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/SellerLayout/SellerLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Buyer/HomeBuyer/HomeBuyer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Buyer/HomeBuyer/HomeBuyer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/components/banner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/components/banner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/components/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/components/header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/homeStyle/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/homeStyle/header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Seller/LoginSeller/LoginSeller.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/LoginSeller/LoginSeller.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Seller/LoginSeller/loginStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/LoginSeller/loginStyle.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/SignUpSeller.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/SignUpSeller.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/signUpStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/signUpStyle.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +74,7 @@
       <workItem from="1631154072755" duration="23000" />
       <workItem from="1631672163440" duration="8088000" />
       <workItem from="1631700454148" duration="4247000" />
+      <workItem from="1631715689294" duration="8550000" />
     </task>
     <servers />
   </component>
