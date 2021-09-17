@@ -51,6 +51,7 @@
   }
   .form-login{
     margin-right: 200px;
+    width: 256px;
     .title{
       color: #ffffff;
       font-size: 25px;
@@ -75,6 +76,10 @@
       .user-name{
         margin-bottom: 15px;
       }
+      .error{
+        border: 1px solid #e55353;
+        box-shadow: 0 0 4px 4px #e55353;
+      }
       .password{
         .show-pass{
           top: 35px;
@@ -84,7 +89,7 @@
       }
       .forgot-pass{
         margin-top: 12px;
-        a{
+        p{
           margin: 0;
           color: #ffffff;
           cursor: pointer;

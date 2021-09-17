@@ -9,7 +9,7 @@ function Header(props) {
     <div id="header-seller" className="header-seller">
       <div className="container d-flex justify-content-between align-items-center">
         <div className="logo">
-          <img src="/assets/images/logo-shopki.png" alt="banner"/>
+         <Link to="/"> <img src="/assets/images/logo-shopki.png" alt="banner"/></Link>
         </div>
         <div className="login-register">
             <Link to="/seller/login"><button className="btn-login">Đăng nhập</button></Link>

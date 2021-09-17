@@ -3,7 +3,7 @@ import { Switch } from 'react-router-dom'
 
 import ProtectedRoute from 'components/ProtectedRoute'
 import BuyerLayoutHeader from './components/BuyerLayoutHeader'
-import BuyerLayoutFooter from './components/BuyerLayoutFooter'
+import BuyerLayoutFooter from '../../common/footer/BuyerLayoutFooter'
 import routes from 'routes'
 
 import './buyerLayout.scss'

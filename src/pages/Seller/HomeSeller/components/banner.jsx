@@ -44,21 +44,26 @@ function Banner(props){
     slidesToScroll: 1,
     arrows:true,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+    centerPadding: "150px",
+    className: "center",
+    centerMode: true,
+    autoplay:true,
+    autoplaySpeed: 3000
   };
   return(
     <div id="banner-seller">
        <div className="w-100 overflow-hidden position-relative">
          <Slider {...settings}>
-           <div className="items d-flex justify-content-center">
-             <img src="/assets/images/banner-head.jpg" alt="banner"/>
-           </div>
-           <div className="items d-flex justify-content-center">
-             <img src="/assets/images/banner-head2.jpg" alt="banner"/>
-           </div>
-           <div className="items d-flex justify-content-center">
-             <img src="/assets/images/banner-head3.jpg" alt="banner"/>
-           </div>
+          <div className="items ">
+            <img src="/assets/images/banner-head.jpg" alt="banner"/>
+          </div>
+          <div className="items ">
+            <img src="/assets/images/banner-head2.jpg" alt="banner"/>
+          </div>
+          <div className="items">
+            <img src="/assets/images/banner-head3.jpg" alt="banner"/>
+          </div>
          </Slider>
       </div>
     </div>
