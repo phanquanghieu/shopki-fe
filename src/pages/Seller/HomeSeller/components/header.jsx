@@ -13,7 +13,7 @@ function Header(props) {
         </div>
         <div className="login-register">
             <Link to="/seller/login"><button className="btn-login">Đăng nhập</button></Link>
-            <button className="btn-register">Đăng kí</button>
+          <Link to="/seller/register" ><button className="btn-register" >Đăng kí</button></Link>
         </div>
       </div>
     </div>

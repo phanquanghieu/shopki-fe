@@ -38,12 +38,22 @@ function LoginSeller() {
     }))
   }
   const handleOnChangeUserName = (e) => {
-    setUserName(e.currentTarget.value)
-    setError((prevState) => ({
-      ...prevState,
-      password: '',
-      userName: ''
-    }))
+    const regex=new RegExp(/(^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$|^\d{10,10})$/);
+    if (regex.test(e.currentTarget.value)){
+      setUserName(e.currentTarget.value)
+      setError((prevState) => ({
+        ...prevState,
+        password: '',
+        userName: ''
+      }))
+    }else{
+      setError((prevState)=>({
+        ...prevState,
+        userName:"Tài khoản phải là email hoặc SĐT 10 chữ số",
+        password:""
+      }));
+    }
+
   }
   return (
     <div id='login-form' style={{ backgroundColor: '#f28466' }}>
