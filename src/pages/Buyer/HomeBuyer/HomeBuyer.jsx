@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react'
-import local from 'services/local'
-import request from 'services/request'
 import CategoryCarousel from './components/CategoryCarousel'
 import ProductItem from 'pages/components/ProductItem'
 

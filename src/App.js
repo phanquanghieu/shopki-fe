@@ -12,45 +12,49 @@ import LoginBuyer from 'pages/Buyer/LoginBuyer'
 import SignUpBuyer from 'pages/Buyer/SignUpBuyer'
 import LoginSeller from 'pages/Seller/LoginSeller'
 import SignUpSeller from 'pages/Seller/SignUpSeller'
+import BuyerLayoutFooter from './common/footer/BuyerLayoutFooter'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Suspense fallback={<Loader />}>
-        <Switch>
-          <Route
-            path='/login'
-            exact
-            name='Buyer Login '
-            render={(props) => <LoginBuyer {...props} />}
-          />
-          <Route
-            path='/signup'
-            exact
-            name='Buyer Signup '
-            render={(props) => <SignUpBuyer {...props} />}
-          />
-          <Route
-            path='/seller/login'
-            exact
-            name='Seller Login '
-            render={(props) => <LoginSeller {...props} />}
-          />
-          <Route
-            path='/seller/signup'
-            exact
-            name='Seller Login '
-            render={(props) => <SignUpSeller {...props} />}
-          />
-          <Route
-            path='/seller'
-            name='Seller Layout'
-            render={(props) => <SellerLayout {...props} />}
-          />
-          <Route path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
-        </Switch>
-      </Suspense>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Suspense fallback={<Loader />}>
+          <Switch>
+            <Route
+              path='/login'
+              exact
+              name='Buyer Login '
+              render={(props) => <LoginBuyer {...props} />}
+            />
+            <Route
+              path='/signup'
+              exact
+              name='Buyer Signup '
+              render={(props) => <SignUpBuyer {...props} />}
+            />
+            <Route
+              path='/seller/login'
+              exact
+              name='Seller Login '
+              render={(props) => <LoginSeller {...props} />}
+            />
+            <Route
+              path='/seller/register'
+              exact
+              name='Seller Login '
+              render={(props) => <SignUpSeller {...props} />}
+            />
+            <Route
+              path='/seller'
+              name='Seller Layout'
+              render={(props) => <SellerLayout {...props} />}
+            />
+            <Route path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
+          </Switch>
+        </Suspense>
+      </BrowserRouter>
+      <BuyerLayoutFooter/>
+    </div>
   )
 }
 export default App
