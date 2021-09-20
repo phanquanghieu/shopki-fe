@@ -26,15 +26,15 @@ function BuyerLayoutHeader() {
             </div>
           </div>
           <div className='h-header-top__right'>
-            <div className='h-header-top__item h-dropdown h-dropdown--noti'>
+          <Link to = '/buyer/notice' className='h-header-top__item h-dropdown h-dropdown--noti'>
               <div className='h-header-top__link h-dropdown__toggle'>
                 <i className='fas fa-bell'></i> Thông báo
               </div>
               <div className='h-dropdown__menu'>
                 <div className='h-menu__item'>sss</div>
               </div>
-            </div>
-            <Link to='/signup' className='h-header-top__item'>
+            </Link>
+            <Link to='/signup ' className='h-header-top__item'>
               <div className='h-header-top__link'>Đăng ký</div>
             </Link>
             <Link to='/login' className='h-header-top__item'>
