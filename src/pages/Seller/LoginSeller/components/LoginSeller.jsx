@@ -3,7 +3,7 @@ import '../style/loginStyle.scss'
 import { Link } from 'react-router-dom'
 import ForgotPassword from './forgotPassword'
 
-function LoginSeller() {
+function LoginSeller(props) {
   const [isShowPass, setIsShowPass] = useState(false)
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
@@ -25,6 +25,9 @@ function LoginSeller() {
         userName: ''
       }))
       return false
+    }
+    if (userName==='chinh@gmail.com'&& password==='1234'){
+      props.history.push("/seller/home")
     }
     console.log(userName)
     console.log(password)
