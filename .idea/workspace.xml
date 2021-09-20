@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/components/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/components/header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/homeStyle/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/HomeSeller/homeStyle/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/LoginSeller/components/LoginSeller.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/LoginSeller/components/LoginSeller.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/SignUpSeller.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/SignUpSeller.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/signUpStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/signUpStyle.scss" afterDir="false" />
-    </list>
+    <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
