@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import '@fortawesome/fontawesome-free/css/all.css'
+import 'libs/Toast/toast.scss'
 import 'scss/style.scss'
 
 import Loader from 'components/Loader'
@@ -12,7 +13,6 @@ import LoginBuyer from 'pages/Buyer/LoginBuyer'
 import SignUpBuyer from 'pages/Buyer/SignUpBuyer'
 import LoginSeller from 'pages/Seller/LoginSeller'
 import SignUpSeller from 'pages/Seller/SignUpSeller'
-import BuyerLayoutFooter from './common/footer/BuyerLayoutFooter'
 
 function App() {
   return (
@@ -53,7 +53,6 @@ function App() {
           </Switch>
         </Suspense>
       </BrowserRouter>
-      <BuyerLayoutFooter/>
     </div>
   )
 }

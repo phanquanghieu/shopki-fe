@@ -27,25 +27,25 @@ routes.buyer = [
   {
     path: '/buyer',
     component: BuyerPage,
-    isProtected: false,
+    isProtected: true,
     subRoutes: [
       {
         path: '/buyer/account/profile',
         exact: true,
         component: ProfileBuyer,
-        isProtected: false,
+        isProtected: true,
       },
       {
         path: '/buyer/account/address',
         exact: true,
         component: AddressBuyer,
-        isProtected: false,
+        isProtected: true,
       },
       {
         path: '/buyer/account/password',
         exact: true,
         component: PasswordBuyer,
-        isProtected: false,
+        isProtected: true,
       },
     ],
   },

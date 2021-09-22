@@ -10,9 +10,12 @@ let auth = {}
 auth.signUp = async (phone, password, userType) => {
   try {
     let response = await fetch(
-      process.env.REACT_APP_BE_URL + URL_BY_USER_TYPE[userType] + '/signup',
+      process.env.REACT_APP_BE_URL + URL_BY_USER_TYPE[userType] + '/api/auth/signup',
       {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ phone, password }),
       }
     )
@@ -27,18 +30,20 @@ auth.signUp = async (phone, password, userType) => {
 auth.login = async (phone, password, userType) => {
   try {
     let response = await fetch(
-      process.env.REACT_APP_BE_URL + URL_BY_USER_TYPE[userType] + '/login',
+      process.env.REACT_APP_BE_URL + URL_BY_USER_TYPE[userType] + '/api/auth/login',
       {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ phone, password }),
       }
     )
     if (!response.ok) return { error: 1, message: 'Server error' }
     response = await response.json()
-    if (response?.error === 0) {
-      local.set('user', response.data.user)
-      local.set('token', response.data.token)
-    }
+    local.set('user', response?.user)
+    local.set('token', response.token)
+
     return response
   } catch (error) {
     console.error(error)
