@@ -29,6 +29,7 @@
                 padding: 12px;
                 background-color: lightcyan;
                 width: 100%;
+
                 .notice__item-img{
                     width: 89px;
                     object-fit: contain;
@@ -45,9 +46,10 @@
                     }
                 }
             }
-            .notice__item-link:active .notice__item-link-seen{
-                background-color: #fff;
-            }
+            // .notice__item-link:active,
+            // .notice__item-link:visited {
+            //     background-color: #FFF;
+            // }
         }
         // .notice__item :active{
         //     background-color: #fff;

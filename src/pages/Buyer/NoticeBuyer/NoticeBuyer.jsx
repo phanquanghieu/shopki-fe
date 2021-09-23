@@ -6,6 +6,7 @@ function NoticeBuyer() {
     <div className="notice__header">
       <h3 className="notice-btn"> Đánh dấu đã đọc tất cả</h3>
     </div>
+       
      <ul className="notice__list">
        <li className="notice__item">
             <a href="" className="notice__item-link">
