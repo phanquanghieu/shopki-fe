@@ -1,10 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import auth from 'services/auth'
+import helper from 'services/helper'
+import local from 'services/local'
 
 function BuyerLayoutHeader() {
+  const history = useHistory()
   const user = auth.getUser()
   console.log(user)
+
+  const handleLogout = () => {
+    local.clear()
+    helper.toast('danger', 'Logout success')
+    history.push('/')
+  }
 
   return (
     <header className='h-header'>
@@ -26,7 +35,7 @@ function BuyerLayoutHeader() {
             </div>
           </div>
           <div className='h-header-top__right'>
-          <Link to = '/buyer/notice' className='h-header-top__item h-dropdown h-dropdown--noti'>
+            <Link to='/buyer/notice' className='h-header-top__item h-dropdown h-dropdown--noti'>
               <div className='h-header-top__link h-dropdown__toggle'>
                 <i className='fas fa-bell'></i> Thông báo
               </div>
@@ -34,28 +43,33 @@ function BuyerLayoutHeader() {
                 <div className='h-menu__item'>sss</div>
               </div>
             </Link>
-            <Link to='/signup ' className='h-header-top__item'>
-              <div className='h-header-top__link'>Đăng ký</div>
-            </Link>
-            <Link to='/login' className='h-header-top__item'>
-              <div className='h-header-top__link'>Đăng Nhập</div>
-            </Link>
-            <div className='h-header-top__item h-dropdown h-dropdown--profile'>
-              <div className='h-header-top__link h-dropdown__toggle'>
-                <i className='fas fa-user'></i> phanquangieu
+            {!user ? (
+              <>
+                <Link to='/signup' className='h-header-top__item'>
+                  <div className='h-header-top__link'>Đăng ký</div>
+                </Link>
+                <Link to='/login' className='h-header-top__item'>
+                  <div className='h-header-top__link'>Đăng Nhập</div>
+                </Link>
+              </>
+            ) : (
+              <div className='h-header-top__item h-dropdown h-dropdown--profile'>
+                <div className='h-header-top__link h-dropdown__toggle'>
+                  <i className='fas fa-user'></i> phanquangieu
+                </div>
+                <div className='h-dropdown__menu'>
+                  <div className='h-menu__item'>
+                    <Link to='/buyer/account/profile'>Tài khoản của tôi</Link>
+                  </div>
+                  <div className='h-menu__item'>
+                    <Link to='/buyer/purchase'>Đơn mua</Link>
+                  </div>
+                  <div className='h-menu__item' onClick={handleLogout}>
+                    <div>Đăng xuất</div>
+                  </div>
+                </div>
               </div>
-              <div className='h-dropdown__menu'>
-                <div className='h-menu__item'>
-                  <Link to='/buyer/account/profile'>Tài khoản của tôi</Link>
-                </div>
-                <div className='h-menu__item'>
-                  <Link to='/buyer/purchase'>Đơn mua</Link>
-                </div>
-                <div className='h-menu__item'>
-                  <Link to='/login'>Đăng xuất</Link>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
         <div className='h-header-main'>
