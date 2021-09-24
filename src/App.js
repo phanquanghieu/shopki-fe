@@ -13,6 +13,8 @@ import LoginBuyer from 'pages/Buyer/LoginBuyer'
 import SignUpBuyer from 'pages/Buyer/SignUpBuyer'
 import LoginSeller from 'pages/Seller/LoginSeller'
 import SignUpSeller from 'pages/Seller/SignUpSeller'
+import BuyerLayoutFooter from './common/footer/BuyerLayoutFooter'
+import SellerCenter from './pages/Seller/SellerCenter'
 
 function App() {
   return (
@@ -39,15 +41,20 @@ function App() {
               render={(props) => <LoginSeller {...props} />}
             />
             <Route
-              path='/seller/register'
+               path='/seller/register'
               exact
               name='Seller Login '
               render={(props) => <SignUpSeller {...props} />}
             />
             <Route
-              path='/seller'
+              exact path='/seller'
               name='Seller Layout'
               render={(props) => <SellerLayout {...props} />}
+            />
+            <Route
+              exact path='/seller/home-center'
+              name='Seller Layout'
+              render={(props) => <SellerCenter {...props} />}
             />
             <Route path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
           </Switch>
