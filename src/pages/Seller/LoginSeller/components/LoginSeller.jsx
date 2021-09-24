@@ -35,7 +35,7 @@ function LoginSeller(props) {
     if (loginRes?.error) return helper.toast('danger', 'Login error')
 
     helper.toast('success', 'Login success')
-    history.push('/seller/home-center')
+    props.history.push('/seller/home-center')
   }
   const handleOnChangePassword = async (e) => {
     setPassword(e.currentTarget.value)
