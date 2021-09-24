@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import '@fortawesome/fontawesome-free/css/all.css'
+import 'libs/Toast/toast.scss'
 import 'scss/style.scss'
 
 import Loader from 'components/Loader'
@@ -59,7 +60,6 @@ function App() {
           </Switch>
         </Suspense>
       </BrowserRouter>
-      <BuyerLayoutFooter/>
     </div>
   )
 }

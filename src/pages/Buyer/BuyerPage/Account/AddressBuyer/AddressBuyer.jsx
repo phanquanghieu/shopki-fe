@@ -1,7 +1,9 @@
 import React from 'react'
 
 function AddressBuyer() {
-  return <div>addressBuyer</div>
+  return (
+    <div>Địa chỉ</div>
+  )
 }
 
 export default AddressBuyer

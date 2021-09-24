@@ -1,3 +1,4 @@
+// import NoticeBuyer from 'pages/Buyer/NoticeBuyer/NoticeBuyer'
 import React from 'react'
 
 const HomeBuyer = React.lazy(() => import('pages/Buyer/HomeBuyer'))
@@ -6,9 +7,8 @@ const BuyerPage = React.lazy(() => import('pages/Buyer/BuyerPage'))
 const ProfileBuyer = React.lazy(() => import('pages/Buyer/BuyerPage/Account/ProfileBuyer'))
 const AddressBuyer = React.lazy(() => import('pages/Buyer/BuyerPage/Account/AddressBuyer'))
 const PasswordBuyer = React.lazy(() => import('pages/Buyer/BuyerPage/Account/PasswordBuyer'))
-
 const HomeSeller = React.lazy(() => import('pages/Seller/HomeSeller'))
-
+const NoticeBuyer = React.lazy(() => import('pages/Buyer/NoticeBuyer'))
 let routes = {}
 
 routes.buyer = [
@@ -24,27 +24,34 @@ routes.buyer = [
     component: Cart,
     isProtected: false,
   },
+ 
   {
     path: '/buyer',
     component: BuyerPage,
-    isProtected: false,
+    isProtected: true,
     subRoutes: [
       {
         path: '/buyer/account/profile',
         exact: true,
         component: ProfileBuyer,
-        isProtected: false,
+        isProtected: true,
       },
       {
         path: '/buyer/account/address',
         exact: true,
         component: AddressBuyer,
-        isProtected: false,
+        isProtected: true,
       },
       {
         path: '/buyer/account/password',
         exact: true,
         component: PasswordBuyer,
+        isProtected: true,
+      },
+      {
+        path: '/buyer/notice',
+        exact: true,
+        component: NoticeBuyer,
         isProtected: false,
       },
     ],

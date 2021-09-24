@@ -71,7 +71,7 @@ const NAV = [
   },
   {
     name: 'Thông báo',
-    url: '/buyer',
+    url: '/buyer/notice',
     icon: 'far fa-bell',
     color: 'warning',
     isSubNav: false,

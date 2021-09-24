@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
+import local from 'services/local'
 
 function ProtectedRoute({
   component: Component,
@@ -8,7 +9,11 @@ function ProtectedRoute({
   subRoutes,
   ...restProps
 }) {
-  const isAuthenticated = localStorage.getItem('isAuthenticated')
+  let isAuthenticated = false
+  if (isProtected) {
+    const token = local.get('token')
+    isAuthenticated = token
+  }
 
   return (
     <Route
