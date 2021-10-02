@@ -15,16 +15,14 @@ function LoginSeller(props) {
     if (userName === '') {
       setError((prevState) => ({
         ...prevState,
-        userName: 'Vui lòng nhập tài khoản',
-        password: ''
+        userName: 'Vui lòng nhập tài khoản'
       }))
       return false
     }
     if (password === '') {
       setError((prevState) => ({
         ...prevState,
-        password: 'Vui lòng nhập mật khẩu',
-        userName: ''
+        password: 'Vui lòng nhập mật khẩu'
       }))
       return false
     }

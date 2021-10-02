@@ -13,8 +13,8 @@ import LoginBuyer from 'pages/Buyer/LoginBuyer'
 import SignUpBuyer from 'pages/Buyer/SignUpBuyer'
 import LoginSeller from 'pages/Seller/LoginSeller'
 import SignUpSeller from 'pages/Seller/SignUpSeller'
-import BuyerLayoutFooter from './common/footer/BuyerLayoutFooter'
 import SellerCenter from './pages/Seller/SellerCenter'
+import CPLayout from './layouts/CPLayout'
 
 function App() {
   return (
@@ -55,6 +55,11 @@ function App() {
               exact path='/seller/home-center'
               name='Seller Layout'
               render={(props) => <SellerCenter {...props} />}
+            />
+            <Route
+              exact path='/admin'
+              name='CP Layout'
+              render={(props) => <CPLayout {...props} />}
             />
             <Route path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
           </Switch>
