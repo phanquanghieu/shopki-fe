@@ -15,6 +15,7 @@ import LoginSeller from 'pages/Seller/LoginSeller'
 import SignUpSeller from 'pages/Seller/SignUpSeller'
 import SellerCenter from './pages/Seller/SellerCenter'
 import CPLayout from './layouts/CPLayout'
+import ProductDetail from './pages/components/ProductDetail'
 
 function App() {
   return (
@@ -61,6 +62,11 @@ function App() {
               name='CP Layout'
               render={(props) => <CPLayout {...props} />}
             />
+            <Route
+            exact path='/product-detail/:id'
+            name='CP Layout'
+            render={(props) => <ProductDetail {...props} />}
+          />
             <Route path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
           </Switch>
         </Suspense>

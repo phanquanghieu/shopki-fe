@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/layouts/CPLayout/components/Home.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/CPLayout/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/AccountInfo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/Menu.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/PageRight.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/menuStyle.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/components/ProductDetail/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/LoginSeller/components/LoginSeller.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/LoginSeller/components/LoginSeller.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/SignUpSeller.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SignUpSeller/SignUpSeller.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +21,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1xgNLhJqUtXJxeawhF8Ki1Ld45T" />
   <component name="ProjectViewState">
@@ -88,6 +90,7 @@
       <workItem from="1632705313470" duration="1157000" />
       <workItem from="1632990049379" duration="6927000" />
       <workItem from="1633012081024" duration="2683000" />
+      <workItem from="1633142167311" duration="1305000" />
     </task>
     <servers />
   </component>
