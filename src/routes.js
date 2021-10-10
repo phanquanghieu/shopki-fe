@@ -18,13 +18,13 @@ routes.buyer = [
     path: '/',
     exact: true,
     component: HomeBuyer,
-    isProtected: true,
+    isProtected: false,
   },
   {
     path: '/cart',
     exact: true,
     component: Cart,
-    isProtected: true,
+    isProtected: false,
   },
  
   {
