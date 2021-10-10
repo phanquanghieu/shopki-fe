@@ -13,6 +13,7 @@ function Home(props) {
   useEffect(() => {
     const checkHasShop = async () => {
       const user = local.get('user')
+      if(!user?.phone) return history.push('/seller/register')
       const res = await request.post('/api/auth/checkHasShop', {
         phone: user.phone,
       })
