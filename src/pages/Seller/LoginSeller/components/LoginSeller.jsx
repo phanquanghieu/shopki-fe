@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import '../style/loginStyle.scss'
 import { Link } from 'react-router-dom'
 import ForgotPassword from './forgotPassword'
+import auth from '../../../../services/auth'
+import helper from '../../../../services/helper'
 
-function LoginSeller() {
+function LoginSeller(props) {
   const [isShowPass, setIsShowPass] = useState(false)
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
@@ -26,8 +28,14 @@ function LoginSeller() {
       }))
       return false
     }
-    console.log(userName)
-    console.log(password)
+    if (userName==='chinh@gmail.com'&& password==='1234'){
+      props.history.push("/seller/home-center")
+    }
+    let loginRes = await auth.login(userName, password, 'buyer')
+    if (loginRes?.error) return helper.toast('danger', 'Login error')
+
+    helper.toast('success', 'Login success')
+    props.history.push('/seller/home-center')
   }
   const handleOnChangePassword = async (e) => {
     setPassword(e.currentTarget.value)
