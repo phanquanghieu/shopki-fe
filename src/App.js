@@ -12,7 +12,7 @@ import SellerLayout from 'layouts/SellerLayout'
 import LoginBuyer from 'pages/Buyer/LoginBuyer'
 import SignUpBuyer from 'pages/Buyer/SignUpBuyer'
 import LoginSeller from 'pages/Seller/LoginSeller'
-import SignUpSeller from 'pages/Seller/SignUpSeller'
+import SignUpSeller from 'pages/Seller/HSignUpSeller'
 
 function App() {
   return (
