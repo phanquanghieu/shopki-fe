@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { FormGroup, Input, Button } from 'reactstrap'
 import BuyerLayoutFooter from 'common/footer/BuyerLayoutFooter'
@@ -20,6 +20,10 @@ function HSignUpSeller() {
   const [otp, setOtp] = useState()
   const [shopName, setShopName] = useState('')
   const [shopAddress, setShopAddress] = useState('')
+
+  useEffect(() => {
+    if (!user) return history.push('/login')
+  }, [])
 
   const handleSendMail = async () => {
     let res = await request.post('/api/auth/sendmail', {
