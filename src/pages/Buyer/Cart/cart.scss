@@ -58,8 +58,13 @@
                    display: flex;
                     align-items: center;
                     .cart__item-info{
-                        width: 46%;
+                        width: 45%;
                         display: flex;
+                        .cart__item-checkbox{
+                            align-self: center;
+                            justify-self: center;
+                            margin-right: 10px;
+                        }
                         .cart__item-img{
                             width: 80px;
                             object-fit: contain;
@@ -72,12 +77,12 @@
                         }
                     }
                     .cart__item-dongia{
-                        width: 16%;
+                        width: 12%;
                     }
                     .cart__item-soluong{
                         display: inline-flex;
-                        width: 15%;
-                        .cart__item-btn-sub{
+                        width: 19%;
+                        .btn-success{
                             margin: 0 12px;
                         }
                         .cart__item-soluong-text{
