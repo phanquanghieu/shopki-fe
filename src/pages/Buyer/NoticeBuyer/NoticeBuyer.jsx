@@ -1,75 +1,50 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react/cjs/react.development'
+import request from 'services/request'
 import './NoticeBuyer.scss'
 
 function NoticeBuyer() {
+
+  const[notices, setNotice] = useState([])
+  useEffect(() => {
+    const fetchNotice = async () =>{
+      let res = await fetch('http://localhost:8080/api/advertise') 
+      res = await res.json()
+      setNotice(res)
+      console.log(res)
+    }
+    fetchNotice()
+    
+  },[])
+
+
+
+
+
   return <div className="notice">
     <div className="notice__header">
       <h3 className="notice-btn"> Đánh dấu đã đọc tất cả</h3>
     </div>
+       
      <ul className="notice__list">
-       <li className="notice__item">
-            <a href="" className="notice__item-link">
-              <img src="https://cf.shopee.vn/file/009a419db44d72a9bc0999a4a2c9a8d6_tn" alt="" className="notice__item-img" />
-              <div className="notice__item-info">
-                  <p className="notice__item-name">Đơn hàng của bạn đã giao thành công </p>
-                  <p className="notice__item-description">Đơn hàng <b>8415788</b> của bạn đã được giao thành công vào lúc 16:20 20/08/2021 </p>
-              </div>
-              
-            </a>
-            <div className="notice__item-link-seen">
-             
-            </div>
-       </li>
-       <li className="notice__item">
-            <a href="" className="notice__item-link">
-              <img src="https://cf.shopee.vn/file/009a419db44d72a9bc0999a4a2c9a8d6_tn" alt="" className="notice__item-img" />
-              <div className="notice__item-info">
-                  <p className="notice__item-name">Đơn hàng của bạn đã giao thành công </p>
-                  <p className="notice__item-description">Đơn hàng <b>8415788</b> của bạn đã được giao thành công vào lúc 16:20 20/08/2021 </p>
-              </div>
-              
-            </a>
-       </li>
-       <li className="notice__item">
-            <a href="" className="notice__item-link">
-              <img src="https://cf.shopee.vn/file/009a419db44d72a9bc0999a4a2c9a8d6_tn" alt="" className="notice__item-img" />
-              <div className="notice__item-info">
-                  <p className="notice__item-name">Đơn hàng của bạn đã giao thành công </p>
-                  <p className="notice__item-description">Đơn hàng <b>8415788</b> của bạn đã được giao thành công vào lúc 16:20 20/08/2021 </p>
-              </div>
-              
-            </a>
-       </li>
-       <li className="notice__item">
-            <a href="" className="notice__item-link">
-              <img src="https://cf.shopee.vn/file/009a419db44d72a9bc0999a4a2c9a8d6_tn" alt="" className="notice__item-img" />
-              <div className="notice__item-info">
-                  <p className="notice__item-name">Đơn hàng của bạn đã giao thành công </p>
-                  <p className="notice__item-description">Đơn hàng <b>8415788</b> của bạn đã được giao thành công vào lúc 16:20 20/08/2021 </p>
-              </div>
-              
-            </a>
-       </li>
-       <li className="notice__item">
-            <a href="" className="notice__item-link">
-              <img src="https://cf.shopee.vn/file/009a419db44d72a9bc0999a4a2c9a8d6_tn" alt="" className="notice__item-img" />
-              <div className="notice__item-info">
-                  <p className="notice__item-name">Đơn hàng của bạn đã giao thành công </p>
-                  <p className="notice__item-description">Đơn hàng <b>8415788</b> của bạn đã được giao thành công vào lúc 16:20 20/08/2021 </p>
-              </div>
-              
-            </a>
-       </li>
-       <li className="notice__item">
-            <a href="" className="notice__item-link">
-              <img src="https://cf.shopee.vn/file/009a419db44d72a9bc0999a4a2c9a8d6_tn" alt="" className="notice__item-img" />
-              <div className="notice__item-info">
-                  <p className="notice__item-name">Đơn hàng của bạn đã giao thành công </p>
-                  <p className="notice__item-description">Đơn hàng <b>8415788</b> của bạn đã được giao thành công vào lúc 16:20 20/08/2021 </p>
-              </div>
-              
-            </a>
-       </li>
+      {notices.map((notice)=> (
+         <li className="notice__item">
+         <a href="" className="notice__item-link">
+           
+           <img src={notice.img} alt="" className="notice__item-img" />
+           <div className="notice__item-info">
+               <p className="notice__item-name">{notice.name}</p>
+               <p className="notice__item-description">{notice.description}</p>
+           </div>
+           
+         </a>
+         <div className="notice__item-link-seen">
+          
+         </div>
+    </li>
+      ))}
+      
+      
        
        </ul>  
   </div>

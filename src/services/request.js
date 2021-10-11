@@ -1,5 +1,6 @@
 import qs from 'query-string'
 import auth from 'services/auth'
+import helper from './helper'
 
 let request = {}
 const sendRequest = async (url = '', options = {}) => {
@@ -13,13 +14,13 @@ const sendRequest = async (url = '', options = {}) => {
     })
 
     if (response.ok) return await response.json()
-    if (response.status === 404) alert('Not found')
-    if (response.status === 403) alert("You don't have permission")
-    if (response.status === 500) alert('Server error')
+    if (response.status === 404) helper.toast('error', 'Not found')
+    if (response.status === 403) helper.toast('error', "You don't have permission")
+    if (response.status === 500) helper.toast('error', 'Server error')
     return null
   } catch (error) {
     console.error(error)
-    alert('Request error')
+    helper.toast('error', 'Request error')
     return null
   }
 }
