@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './signUpStyle.scss'
 import { Link } from 'react-router-dom'
+import helper from '../../../services/helper'
 
 function SignUpSeller() {
   const [userName, setUserName] = useState('')
@@ -48,11 +49,11 @@ function SignUpSeller() {
       return false;
     }
     if (password!==rePassword){
+
      setNotify("Mật khẩu nhập lại không khớp")
+      helper.toast('success', notify)
       return false;
     }
-    console.log(userName);
-    console.log(password);
   }
   const handleOnChange=async (e,type)=>{
     switch (type){
