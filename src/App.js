@@ -24,26 +24,22 @@ function App() {
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route
-              path='/login'
-              exact
+              exact path='/login'
               name='Buyer Login '
               render={(props) => <LoginBuyer {...props} />}
             />
             <Route
-              path='/signup'
-              exact
+              exact path='/signup'
               name='Buyer Signup '
               render={(props) => <SignUpBuyer {...props} />}
             />
             <Route
-              path='/seller/login'
-              exact
+              exact path='/seller/login'
               name='Seller Login '
               render={(props) => <LoginSeller {...props} />}
             />
             <Route
-               path='/seller/register'
-              exact
+              exact path='/seller/register'
               name='Seller Login '
               render={(props) => <SignUpSeller {...props} />}
             />
@@ -53,7 +49,7 @@ function App() {
               render={(props) => <SellerLayout {...props} />}
             />
             <Route
-              exact path='/seller/home-center'
+              path='/seller/home-center'
               name='Seller Layout'
               render={(props) => <SellerCenter {...props} />}
             />
@@ -67,7 +63,7 @@ function App() {
             name='CP Layout'
             render={(props) => <ProductDetail {...props} />}
           />
-            <Route path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
+            <Route exact path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
           </Switch>
         </Suspense>
       </BrowserRouter>

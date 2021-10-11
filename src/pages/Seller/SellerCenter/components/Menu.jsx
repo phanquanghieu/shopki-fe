@@ -1,13 +1,13 @@
 import '../style/menuStyle.scss'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-function Menu(){
+function Menu(props){
   const menuData=[
     {
       id: 0,
       sort: 0,
       title: 'Dashboard',
-      path: '/seller/seller/home-center-center',
+      path: '/seller/home-center',
       icon: <i className="fa fa-tachometer"/>
     },
     {
@@ -20,55 +20,55 @@ function Menu(){
           id: 0,
           sort: 1,
           name: 'Quản lý thông tin',
-          path: '/seller/seller/home-center-center/shop'
+          path: '/seller/home-center/shop'
         },
         {
           id: 1,
           sort: 2,
           name: 'Quản lý địa chỉ',
-          path: '/seller/seller/home-center-center/shop/address'
+          path: '/seller/home-center/shop/address'
         },
         {
           id: 2,
           sort: 3,
           name: 'Cài đặt vận chuyển',
-          path: '/seller/seller/home-center-center/profile/setting-shipping'
+          path: '/seller/home-center/profile/setting-shipping'
         },
         {
           id: 3,
           sort: 5,
           name: 'Quản lý thẻ',
-          path: '/seller/seller/home-center-center/shop/card'
+          path: '/seller/home-center/shop/card'
         },
         {
           id: 4,
           sort: 6,
           name: 'Đánh giá shop',
-          path: '/seller/seller/home-center-center/shop/review?page=0&size=5'
+          path: '/seller/home-center/shop/review?page=0&size=5'
         },
         {
           id: 5,
           sort: 7,
           name: 'Hỏi đáp',
-          path: '/seller/seller/home-center-center/shop/qa/all'
+          path: '/seller/home-center/shop/qa/all'
         },
         {
           id: 6,
           sort: 8,
           name: 'Thông báo',
-          path: '/seller/seller/home-center-center/notifications/type=all'
+          path: '/seller/home-center/notifications/type=all'
         },
         {
           id: 7,
           sort: 0,
           name: 'Quản lý mẫu store',
-          path: '/seller/seller/home-center-center/shop/official-store'
+          path: '/seller/home-center/shop/official-store'
         },
         {
           id: 8,
           sort: 4,
           name: 'Cài đặt khu vực vận chuyển',
-          path: '/seller/seller/home-center-center/shop/shipping?type=all&page=0'
+          path: '/seller/home-center/shop/shipping?type=all&page=0'
         },
       ]
     },
@@ -186,6 +186,24 @@ function Menu(){
     }
   ]
   const [menuActive,setMenuActive]=useState([0,0])
+  const handleChangeMenu=async (parent,children)=>{
+    let chose={};
+    if (parent.path){
+      chose= {
+        parentTitle:parent.title,
+        childrenTitle:children.name,
+        path:parent.path
+      }
+    }else {
+       chose= {
+        parentTitle:parent.title,
+        childrenTitle:children.name,
+        path:children.path
+      }
+    }
+
+    props.handleChangeMenu(chose);
+  }
   return(
     <div id="menu-center">
       <ul>
@@ -204,21 +222,10 @@ function Menu(){
                 <ul className={`collapse ${menuActive[0] === value.id ? "in h-100" : ""}`}>
                   {value.children.map((children, index1) => {
                     let render = !children.hidden;
-                    if (render) {
-                      // Check Shop Offical store vs Seller Shipping
-                      if (value.id === 1 && children.id === 7)
-                        render = false;
-                      else if (value.id === 1 && children.id === 8)
-                        render = false;
-                      // End
-                      // Check Chozoi enable Auction
-                      if (value.id === 3 && (children.id === 1 || children.id === 3))
-                        render = false;
-                    }
+
                     return render && <li key={index1}
                                          className={(menuActive[0] === value.id) && (menuActive[1] === children.id) ? "active-link" : ""}>
-                      <Link to={children.path} onClick={() => {
-                      }}>{children.name}</Link>
+                      <Link to={children.path} className={"children"}  onClick={() => {handleChangeMenu(value,children)}}>{children.name}</Link>
                     </li>
                   })}
                 </ul>}
