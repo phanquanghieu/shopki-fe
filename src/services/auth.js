@@ -10,7 +10,7 @@ let auth = {}
 auth.signUp = async (phone, password, userType) => {
   try {
     let response = await fetch(
-      process.env.REACT_APP_BE_URL + URL_BY_USER_TYPE[userType] + '/api/auth/signup',
+      process.env.REACT_APP_BE_URL + URL_BY_USER_TYPE[userType] + '/seller/api/auth/signup',
       {
         method: 'POST',
         headers: {
@@ -30,7 +30,7 @@ auth.signUp = async (phone, password, userType) => {
 auth.login = async (phone, password, userType) => {
   try {
     let response = await fetch(
-      process.env.REACT_APP_BE_URL + URL_BY_USER_TYPE[userType] + '/api/auth/login',
+      process.env.REACT_APP_BE_URL + URL_BY_USER_TYPE[userType] + '/seller/api/auth/login',
       {
         method: 'POST',
         headers: {
