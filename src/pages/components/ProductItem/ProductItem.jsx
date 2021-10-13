@@ -3,6 +3,9 @@ import './productItem.scss'
 
 function ProductItem(props) {
   const discount = 100 - Math.round((100 * props.product.promoPrice) / props.product.price)
+  const handleAddToCart=(id)=>{
+    console.log(id)
+  }
   return (
     <div className='h-product-item'>
       <div className='h-p-item-container'>
@@ -39,11 +42,14 @@ function ProductItem(props) {
             </div>
             <div className='h-p__info'>
               <div className='h-p__price'>
-                {props.product.promoPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                {props.product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
               </div>
               <div className='h-p__sold'>Đã bán {props.product.historicalSold}</div>
             </div>
           </div>
+        </div>
+        <div className="position-absolute add-to-cart" onClick={()=>handleAddToCart(props.product.id)}>
+          <i className="fas fa-cart-plus"></i>
         </div>
       </div>
     </div>

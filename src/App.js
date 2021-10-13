@@ -64,7 +64,7 @@ function App() {
             name='CP Layout'
             render={(props) => <ProductDetail {...props} />}
           />
-            <Route exact path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
+            <Route  path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
           </Switch>
         </Suspense>
       </BrowserRouter>

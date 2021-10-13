@@ -4,7 +4,7 @@
   height: 300px;
   padding: 5px;
   cursor: pointer;
-
+  position: relative;
   .h-p-item-container {
     display: flex;
     flex-direction: column;
@@ -112,6 +112,23 @@
           }
         }
       }
+    }
+  }
+  .add-to-cart{
+    top: 30%;
+    left: 35%;
+    font-size: 40px;
+    color: #C1C1C1;
+    display: none;
+    visibility: hidden;
+    &:hover{
+      color: #00b14f;
+    }
+  }
+  &:hover{
+    .add-to-cart{
+      display: block;
+      visibility: visible;
     }
   }
 }

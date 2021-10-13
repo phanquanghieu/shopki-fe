@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react'
-import { Switch } from 'react-router-dom'
+import React, { Suspense, useEffect } from 'react'
+import { Redirect, Switch } from 'react-router-dom'
 
 import ProtectedRoute from 'components/ProtectedRoute'
 import BuyerLayoutHeader from './components/BuyerLayoutHeader'
@@ -9,6 +9,7 @@ import routes from 'routes'
 import './buyerLayout.scss'
 
 function BuyerLayout() {
+  console.log("vao")
   return (
     <>
       <BuyerLayoutHeader />
