@@ -20,7 +20,7 @@ function BuyerLayoutHeader() {
       <div className='h-header-container'>
         <div className='h-header-top'>
           <div className='h-header-top__left'>
-            <Link to='/seller' className='h-header-top__item'>
+            <Link to='/seller/login' className='h-header-top__item'>
               <div className='h-header-top__link'>Kênh người bán</div>
             </Link>
             <div className='h-header-top__item'>
