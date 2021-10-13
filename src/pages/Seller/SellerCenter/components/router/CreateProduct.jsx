@@ -1,11 +1,30 @@
+import { useState } from 'react'
+import { createProduct } from '../../../../../api/product/Product'
+import helper from '../../../../../services/helper'
+
 function CreateProduct(props){
+  const [nameProduct,setNameProduct]=useState("");
+  const [price,setPrice]=useState(0);
+
+  const handleCreateProduct= async ()=>{
+    if (nameProduct===""){
+      return false;
+    }
+    if (price===0){
+      return false;
+    }
+const result=await createProduct(12,nameProduct,price);
+    if (result?.error) return helper.toast('danger', 'Create error')
+
+    helper.toast('success', 'Create success')
+  }
   return(
     <div>
       <div className="form-create-product">
         <h2>Thông tin cơ bản</h2>
         <div className="name-product">
           <p>Tên sản phẩm*</p>
-          <input placeholder="nhập tên sản phẩm"/>
+          <input placeholder="nhập tên sản phẩm" onChange={(e)=>setNameProduct(e.currentTarget.value)}/>
         </div>
         <div className="form-group">
           <label className="control-label">Tình trạng sản phẩm *</label>
@@ -82,6 +101,12 @@ function CreateProduct(props){
           <p>Ảnh sản phẩm</p>
 
         </div>
+        <div className="price">
+          <input placeholder="nhập giá sản phẩm" onChange={(e)=>setPrice(e.currentTarget.value)}/>
+        </div>
+      </div>
+      <div className="btn-create">
+        <button>Tạo sản phẩm</button>
       </div>
     </div>
   )
