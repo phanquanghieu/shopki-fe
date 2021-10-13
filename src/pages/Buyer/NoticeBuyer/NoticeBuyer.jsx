@@ -2,23 +2,20 @@ import React, { useEffect } from 'react'
 import { useState } from 'react/cjs/react.development'
 import request from 'services/request'
 import './NoticeBuyer.scss'
-
+import local from 'services/local'
+const user = local.get('user')
 function NoticeBuyer() {
 
   const[notices, setNotice] = useState([])
   useEffect(() => {
     const fetchNotice = async () =>{
-      let res = await fetch('http://localhost:8080/api/advertise') 
-      res = await res.json()
+      let res = await request.post('/api/advertise' , {id : user.id})
       setNotice(res)
       console.log(res)
     }
     fetchNotice()
     
   },[])
-
-
-
 
 
   return <div className="notice">
