@@ -54,7 +54,7 @@ function HSignUpSeller() {
     })
     if (res?.error === 1) return helper.toast('error', 'Loi')
     helper.toast('success', 'Tạo shop thành công')
-    history.push('/seller')
+    history.push('/seller/home-center')
   }
 
   return (

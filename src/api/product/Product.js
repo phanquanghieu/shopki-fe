@@ -1,5 +1,4 @@
 import local from '../../services/local'
-import auth from '../../services/auth'
 
 export const createProduct=async (shopId,name,price)=>{
   try {
@@ -10,7 +9,7 @@ export const createProduct=async (shopId,name,price)=>{
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, price }),
+        body: JSON.stringify({ name, price,shopId }),
       }
     )
     if (!response.ok) return { error: 1, message: 'Server error' }

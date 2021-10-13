@@ -1,51 +1,56 @@
 import { useState } from 'react'
 import { createProduct } from '../../../../../api/product/Product'
 import helper from '../../../../../services/helper'
+import local from '../../../../../services/local'
 
-function CreateProduct(props){
-  const [nameProduct,setNameProduct]=useState("");
-  const [price,setPrice]=useState(0);
+function CreateProduct(props) {
+  const [nameProduct, setNameProduct] = useState('')
+  const [price, setPrice] = useState(0)
 
-  const handleCreateProduct= async ()=>{
-    if (nameProduct===""){
-      return false;
+  const handleCreateProduct = async () => {
+    if (nameProduct === '') {
+      return false
     }
-    if (price===0){
-      return false;
+    if (price === 0) {
+      return false
     }
-const result=await createProduct(12,nameProduct,price);
+    let shopId = ''
+    if (local.get('user')) {
+      shopId = local.get('user').shop_id
+    }
+    const result = await createProduct(shopId, nameProduct, price)
     if (result?.error) return helper.toast('danger', 'Create error')
 
     helper.toast('success', 'Create success')
   }
-  return(
+  return (
     <div>
-      <div className="form-create-product">
+      <div className='form-create-product'>
         <h2>Thông tin cơ bản</h2>
-        <div className="name-product">
+        <div className='name-product'>
           <p>Tên sản phẩm*</p>
-          <input placeholder="nhập tên sản phẩm" onChange={(e)=>setNameProduct(e.currentTarget.value)}/>
+          <input placeholder='nhập tên sản phẩm' onChange={(e) => setNameProduct(e.currentTarget.value)} />
         </div>
-        <div className="form-group">
-          <label className="control-label">Tình trạng sản phẩm *</label>
-          <div className="condition">
+        <div className='form-group'>
+          <label className='control-label'>Tình trạng sản phẩm *</label>
+          <div className='condition'>
             <div>
-              <input id="infomation-radio-1" className="magic-radio" type="radio"
-                     value="NEW"
-                     name="inline-form-radio-condition"
-                     // onChange={e => this.props.EmitInputOnChange(e, "condition")}
+              <input id='infomation-radio-1' className='magic-radio' type='radio'
+                     value='NEW'
+                     name='inline-form-radio-condition'
+                // onChange={e => this.props.EmitInputOnChange(e, "condition")}
               />
               <label
-                htmlFor="infomation-radio-1">Mới</label>
+                htmlFor='infomation-radio-1'>Mới</label>
             </div>
-            <div className="mt-2">
-              <input id="infomation-radio-2"
-                     value="USED"
-                     className="magic-radio" type="radio"
-                     name="inline-form-radio-condition"
-                     // onChange={e => this.props.EmitInputOnChange(e, "condition")}
+            <div className='mt-2'>
+              <input id='infomation-radio-2'
+                     value='USED'
+                     className='magic-radio' type='radio'
+                     name='inline-form-radio-condition'
+                // onChange={e => this.props.EmitInputOnChange(e, "condition")}
               /><label
-              htmlFor="infomation-radio-2">Đã sử dụng</label>
+              htmlFor='infomation-radio-2'>Đã sử dụng</label>
             </div>
           </div>
         </div>
@@ -95,20 +100,21 @@ const result=await createProduct(12,nameProduct,price);
         {/*</div>*/}
         <div>
           <p>Đặc điểm nổi bật</p>
-          <textarea/>
+          <textarea />
         </div>
-        <div className="image">
+        <div className='image'>
           <p>Ảnh sản phẩm</p>
 
         </div>
-        <div className="price">
-          <input placeholder="nhập giá sản phẩm" onChange={(e)=>setPrice(e.currentTarget.value)}/>
+        <div className='price'>
+          <input placeholder='nhập giá sản phẩm' onChange={(e) => setPrice(e.currentTarget.value)} />
         </div>
       </div>
-      <div className="btn-create">
+      <div className='btn-create' onClick={() => handleCreateProduct()}>
         <button>Tạo sản phẩm</button>
       </div>
     </div>
   )
 }
+
 export default CreateProduct
