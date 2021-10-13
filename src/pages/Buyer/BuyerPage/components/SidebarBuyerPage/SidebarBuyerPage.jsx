@@ -78,7 +78,7 @@ const NAV = [
   },
   {
     name: 'Kho Voucher',
-    url: '/buyer',
+    url: '/buyer/voucher',
     icon: 'far fa-star',
     color: 'danger',
     isSubNav: false,

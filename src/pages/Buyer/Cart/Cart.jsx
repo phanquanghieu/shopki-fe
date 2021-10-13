@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import './cart.scss'
 import { useState } from 'react'
 import request from 'services/request'
+import local from 'services/local'
+const user = local.get('user')
 function Cart() {
   // const [carts, setCart] = useState(
   //   [
@@ -29,8 +31,8 @@ function Cart() {
   const[carts,setCart] = useState([])
   useEffect(()=>{
     const fetchCart= async() =>{
-      let res = await fetch('http://localhost:8080/api/cart')
-      res = await res.json();
+      let res = await request.post('/api/cart' , {id : user.id})
+      
       setCart(res)
       console.log(res)
         }
