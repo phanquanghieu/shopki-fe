@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/product/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/HSignUpSeller/HSignUpSeller.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/HSignUpSeller/HSignUpSeller.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/CreateProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/CreateProduct.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProtectedRoute/ProtectedRoute.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProtectedRoute/ProtectedRoute.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/BuyerLayout/BuyerLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BuyerLayout/BuyerLayout.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
