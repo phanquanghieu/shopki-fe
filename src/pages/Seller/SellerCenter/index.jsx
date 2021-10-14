@@ -11,13 +11,6 @@ function SellerCenter(props){
     childrenTitle:"",
     path:""})
   const user = local.get('user')
-  useEffect(()=>{
-    if (user.shop_id){
-
-    }else {
-      props.history.push('/seller/register')
-    }
-  })
   const handleOnClick=()=>{
 
   }

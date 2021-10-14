@@ -66,9 +66,9 @@ function LoginSeller(props) {
       <div className='header-login'>
         <div className='container d-flex justify-content-between align-items-center'>
           <div className='logo d-flex'>
-            <Link to='/seller'>ShopKi</Link>
+            <Link to='/'>ShopKi</Link>
             <div className='nav-login d-flex align-items-center'>
-              <h2>Đăng nhập</h2>/<Link to='/seller/register'>Đăng ký</Link>
+              <h2>Đăng nhập</h2>
             </div>
           </div>
           <div className='help'>
@@ -120,12 +120,9 @@ function LoginSeller(props) {
                 <p onClick={() => setIsForgot(true)}>Quên mật khẩu</p>
               </div>
             </div>
-            <div className='footer-form'>
+            <div className='footer-form d-flex justify-content-center'>
               <div>
                 <button onClick={() => handleLogin()}>Đăng nhập</button>
-                <Link to='/seller/register'>
-                  <button>Đăng ký</button>
-                </Link>
               </div>
             </div>
           </div>}
