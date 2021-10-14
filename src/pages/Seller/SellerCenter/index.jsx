@@ -1,14 +1,23 @@
 import Menu from './components/Menu'
 import PageRight from './components/PageRight'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import HomeRouter from './components/HomeRouter'
 import ProfileShop from './components/ProfileShop'
+import local from '../../../services/local'
 
 function SellerCenter(props){
   const [choseMenu,setChoseMenu]=useState({
     parentTitle:"",
     childrenTitle:"",
     path:""})
+  const user = local.get('user')
+  useEffect(()=>{
+    if (user.shop_id){
+
+    }else {
+      props.history.push('/seller/register')
+    }
+  })
   const handleOnClick=()=>{
 
   }
