@@ -17,7 +17,7 @@ function SellerCenter(props){
   }
   return(
     <div className="w-100 d-flex">
-    <div style={{width:"20%"}}>
+    <div style={{width:"20%",marginTop:"20px"}}>
       <ProfileShop/>
       <Menu handleChangeMenu={(chose)=>handleChangeMenu(chose)}/>
     </div>

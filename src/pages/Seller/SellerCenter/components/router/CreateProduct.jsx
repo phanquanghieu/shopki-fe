@@ -2,10 +2,12 @@ import { useState } from 'react'
 import { createProduct } from '../../../../../api/product/Product'
 import helper from '../../../../../services/helper'
 import local from '../../../../../services/local'
+import '../../style/createProduct.scss'
 
 function CreateProduct(props) {
   const [nameProduct, setNameProduct] = useState('')
   const [price, setPrice] = useState(0)
+  const [description,setDescription]=useState('')
 
   const handleCreateProduct = async () => {
     if (nameProduct === '') {
@@ -18,100 +20,68 @@ function CreateProduct(props) {
     if (local.get('user')) {
       shopId = local.get('user').shop_id
     }
-    const result = await createProduct(shopId, nameProduct, price)
+    const result = await createProduct(shopId, nameProduct, price,description)
     if (result?.error) return helper.toast('danger', 'Create error')
 
     helper.toast('success', 'Create success')
   }
+  const inputPrice = (e) => {
+    let value = e.currentTarget.value;
+    value = value.replace(/[^0-9]/g, '');
+    value = parseInt(value);
+    if (!isNaN(value)){
+      setPrice(value);
+    }else setPrice(0);
+  }
   return (
-    <div>
-      <div className='form-create-product'>
-        <h2>Thông tin cơ bản</h2>
-        <div className='name-product'>
-          <p>Tên sản phẩm*</p>
-          <input placeholder='nhập tên sản phẩm' onChange={(e) => setNameProduct(e.currentTarget.value)} />
-        </div>
-        <div className='form-group'>
-          <label className='control-label'>Tình trạng sản phẩm *</label>
-          <div className='condition'>
-            <div>
-              <input id='infomation-radio-1' className='magic-radio' type='radio'
-                     value='NEW'
-                     name='inline-form-radio-condition'
-                // onChange={e => this.props.EmitInputOnChange(e, "condition")}
-              />
-              <label
-                htmlFor='infomation-radio-1'>Mới</label>
-            </div>
-            <div className='mt-2'>
-              <input id='infomation-radio-2'
-                     value='USED'
-                     className='magic-radio' type='radio'
-                     name='inline-form-radio-condition'
-                // onChange={e => this.props.EmitInputOnChange(e, "condition")}
-              /><label
-              htmlFor='infomation-radio-2'>Đã sử dụng</label>
+    <div className="d-flex flex-column justify-content-center align-items-center">
+      <div id="create-product">
+        <div className='form-create-product'>
+          <h2>Thông tin cơ bản</h2>
+          <div className='name-product'>
+            <p className="title">Tên sản phẩm<span>*</span></p>
+            <input placeholder='nhập tên sản phẩm' onChange={(e) => setNameProduct(e.currentTarget.value)} />
+          </div>
+          <div className='form-group'>
+            <p className="title">Tình trạng sản phẩm <span>*</span></p>
+            <div className='condition'>
+              <div>
+                <input id='infomation-radio-1' className='magic-radio' type='radio'
+                       value='NEW'
+                       name='inline-form-radio-condition'
+                  // onChange={e => this.props.EmitInputOnChange(e, "condition")}
+                />
+                <label
+                  htmlFor='infomation-radio-1'>Mới</label>
+              </div>
+              <div className='mt-2'>
+                <input id='infomation-radio-2'
+                       value='USED'
+                       className='magic-radio' type='radio'
+                       name='inline-form-radio-condition'
+                  // onChange={e => this.props.EmitInputOnChange(e, "condition")}
+                /><label
+                htmlFor='infomation-radio-2'>Đã sử dụng</label>
+              </div>
             </div>
           </div>
-        </div>
-        {/*<div className="form-group">*/}
-        {/*  <label className="control-label">Danh mục **/}
-        {/*    <a href="https://chozoi.vn/help-center/quy-dinh-dang-san-pham.18" target="_blank" style={{color:"#7a878e"}}>*/}
-        {/*      <i className="fa fa-info-circle"*/}
-        {/*         data-toggle="tooltip"*/}
-        {/*         data-placement="top"*/}
-        {/*         title="Xem chiết khấu ngành hàng."*/}
-        {/*      />*/}
-        {/*    </a></label>*/}
-        {/*  <div className="w-100 d-flex">*/}
-        {/*    {this.store.listCategoriesLv1.length > 0 &&*/}
-        {/*    <select className="form-control"*/}
-        {/*            defaultValue={defaultCategory ? defaultCategory[0].toString() : ""}*/}
-        {/*            onChange={e => CREATE_TEMPLATE_CONTROL.getListCategoriesLv2(parseInt(e.currentTarget.value))}*/}
-        {/*            style={{width: '30%'}} required>*/}
-        {/*      <option value="" disabled>---Lựa chọn---</option>*/}
-        {/*      {this.store.listCategoriesLv1.map((value, index) =>*/}
-        {/*        <option key={index}*/}
-        {/*                value={value.id}>{value.name}</option>)}*/}
-        {/*    </select>}*/}
-        {/*    {this.store.listCategoriesLv2.length > 0 &&*/}
-        {/*    <select className="form-control mx-3"*/}
-        {/*            defaultValue={defaultCategory ? defaultCategory[1].toString() : ""}*/}
-        {/*            key={this.state.keyCategoriesLv2}*/}
-        {/*            onChange={e => CREATE_TEMPLATE_CONTROL.getListCategoriesLv3(parseInt(e.currentTarget.value))}*/}
-        {/*            style={{width: '30%'}} required>*/}
-        {/*      <option value="" disabled>---Lựa chọn---</option>*/}
-        {/*      {this.store.listCategoriesLv2.map((value, index) =>*/}
-        {/*        <option key={index}*/}
-        {/*                value={value.id}>{value.name}</option>)}*/}
-        {/*    </select>}*/}
-        {/*    {this.store.listCategoriesLv3.length > 0 &&*/}
-        {/*    <select className="form-control"*/}
-        {/*            defaultValue={defaultCategory && defaultCategory[2] ? defaultCategory[2].toString() : ""}*/}
-        {/*            key={this.state.keyCategoriesLv3}*/}
-        {/*            onChange={e => CREATE_TEMPLATE_CONTROL.getListPropety(parseInt(e.currentTarget.value))}*/}
-        {/*            style={{width: '30%'}} required>*/}
-        {/*      <option value="" disabled>---Lựa chọn---</option>*/}
-        {/*      {this.store.listCategoriesLv3.map((value, index) =>*/}
-        {/*        <option key={index}*/}
-        {/*                value={value.id}>{value.name}</option>)}*/}
-        {/*    </select>}*/}
-        {/*  </div>*/}
-        {/*</div>*/}
-        <div>
-          <p>Đặc điểm nổi bật</p>
-          <textarea />
-        </div>
-        <div className='image'>
-          <p>Ảnh sản phẩm</p>
+          <div className="characteristics">
+            <p className="title">Đặc điểm nổi bật</p>
+            <textarea onChange={(e)=>setDescription(e.currentTarget.value)}/>
+          </div>
+          <div className='image'>
+            <p className="title">Ảnh sản phẩm</p>
+            <p>Coming soon</p>
 
+          </div>
+          <div className='price'>
+            <p className="title">Nhập giá sản phẩm<span>*</span></p>
+            <input placeholder='nhập giá sản phẩm' value={price} onChange={(e) => inputPrice(e)} />
+          </div>
         </div>
-        <div className='price'>
-          <input placeholder='nhập giá sản phẩm' onChange={(e) => setPrice(e.currentTarget.value)} />
+        <div className='btn-create d-flex justify-content-center' onClick={() => handleCreateProduct()}>
+          <button>Tạo sản phẩm</button>
         </div>
-      </div>
-      <div className='btn-create' onClick={() => handleCreateProduct()}>
-        <button>Tạo sản phẩm</button>
       </div>
     </div>
   )

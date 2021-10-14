@@ -188,19 +188,28 @@ function Menu(props){
   const [menuActive,setMenuActive]=useState([0,0])
   const handleChangeMenu=async (parent,children)=>{
     let chose={};
-    if (parent.path){
-      chose= {
-        parentTitle:parent.title,
-        childrenTitle:children.name,
-        path:parent.path
+    if (children){
+      if (parent.path){
+        chose= {
+          parentTitle:parent.title,
+          childrenTitle:children.name,
+          path:parent.path
+        }
+      }else {
+        chose= {
+          parentTitle:parent.title,
+          childrenTitle:children.name,
+          path:children.path
+        }
       }
     }else {
-       chose= {
-        parentTitle:parent.title,
-        childrenTitle:children.name,
-        path:children.path
+      chose= {
+        parentTitle:"Tổng quan cửa hàng",
+        childrenTitle:"",
+        path:parent.path
       }
     }
+
 
     props.handleChangeMenu(chose);
   }
@@ -213,7 +222,7 @@ function Menu(props){
               <li key={i}
                   className={`${menuActive[0] === value.id ? "active-sub active" : ""}`}>
                 <Link to={value.path ? value.path : '#'}
-                      onClick={() => setMenuActive ([value.id, -1]) }>
+                      onClick={() => {setMenuActive ([value.id, -1]);handleChangeMenu(value,null)} }>
                   {value.icon}
                   <span className="menu-title">{value.title}</span>
                   {value.children && <i className="arrow"/>}
@@ -225,7 +234,7 @@ function Menu(props){
 
                     return render && <li key={index1}
                                          className={(menuActive[0] === value.id) && (menuActive[1] === children.id) ? "active-link" : ""}>
-                      <Link to={children.path} className={"children"}  onClick={() => {handleChangeMenu(value,children)}}>{children.name}</Link>
+                      <Link to={children.path} className={"children"}  onClick={() => {setMenuActive ([value.id, children.id]);handleChangeMenu(value,children)}}>{children.name}</Link>
                     </li>
                   })}
                 </ul>}
