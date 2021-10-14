@@ -12,10 +12,27 @@ function ProductList() {
   })
   const [products, setProducts] = useState([])
   const [isDelete, setIsDelete] = useState(false)
+  const [isEdit, setIsEdit] = useState(false)
   const [idDelete,setIdDelete]=useState(0)
+  const [productEdit,setProductEdit]=useState({})
   const handleDelete = (id) => {
     setIdDelete(id)
     setIsDelete(true)
+  }
+  const handleEdit = (product) => {
+    setProductEdit(product);
+    setIsEdit(true);
+  }
+  const handleChanValue=(e,type)=>{
+    if (type==='name'){
+      let product={...productEdit};
+      product.name=e.currentTarget.value;
+      setProductEdit(product)
+    }else {
+      let product={...productEdit};
+      product.price=e.currentTarget.value;
+      setProductEdit(product)
+    }
   }
   const handleDeleteProduct=async ()=>{
     const res = await request.delete('/api/product',{id:idDelete});
@@ -60,7 +77,7 @@ function ProductList() {
                   </div>
                 </div>
                 <div className='btn-nav d-flex'>
-                  <button>Chỉnh sửa</button>
+                  <button onClick={()=>handleEdit(value)}>Chỉnh sửa</button>
                   <button onClick={() => handleDelete(value.id)}>Xóa</button>
                 </div>
               </div>
@@ -74,6 +91,28 @@ function ProductList() {
               <div className='btn-confirm d-flex justify-content-center'>
                 <button onClick={()=>handleDeleteProduct()}>Có</button>
                 <button onClick={()=>setIsDelete(false)}>Không</button>
+              </div>
+            </div>
+          </div>}
+          {isEdit&&<div>
+            <div className="nen" onClick={()=>setIsEdit(false)}>
+            </div>
+            <div className="edit-product">
+              <div className="title-edit">
+                <p>Chỉnh sửa sản phẩm</p>
+              </div>
+              <div className="form-edit">
+                <div className="name-product">
+                  <p>Tên sản phẩm</p>
+                  <input value={productEdit.name} placeholder="tên sản phẩm" onChange={(e)=>handleChanValue(e,'name')}/>
+                </div>
+                <div className="price">
+                  <p>Giá sản phẩm</p>
+                  <input value={productEdit.price} placeholder="giá sản phẩm" onChange={(e)=>handleChanValue(e,'price')}/>
+                </div>
+              </div>
+              <div className="btn-confirm d-flex justify-content-center">
+                <button>Xác nhận</button>
               </div>
             </div>
           </div>}

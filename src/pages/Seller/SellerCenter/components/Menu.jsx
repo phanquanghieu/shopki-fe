@@ -168,7 +168,7 @@ function Menu(props){
         {
           id: 1,
           sort: 1,
-          name: 'Chương trình Chozoi',
+          name: 'Chương trình Shopki',
           path: '/seller/home-center/campaign?page=0&size=5'
         }
       ]
