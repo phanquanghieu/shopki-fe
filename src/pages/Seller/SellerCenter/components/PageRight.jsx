@@ -1,15 +1,16 @@
 import HomeRouter from './HomeRouter'
-
+import '../style/pageRight.scss'
 function PageRight(props){
   return(
-    <div>
+    <div id="page-right">
       <div className="title-page">
-       <div>
-         {props.choseMenu.parentTitle}
+       <div className="parent">
+        <p> {props.choseMenu.parentTitle?props.choseMenu.parentTitle:"Tổng quan cửa hàng"}</p>
        </div>
-        <divv>
+        <div className="children d-flex align-items-center">
+          <i className="fas fa-chevron-right"/>
           {props.choseMenu.childrenTitle}
-        </divv>
+        </div>
       </div>
       <div>
         <HomeRouter/>
