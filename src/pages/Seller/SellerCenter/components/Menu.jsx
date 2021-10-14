@@ -176,7 +176,9 @@ function Menu(props){
   ]
   useEffect(()=>{
      let activeMenu=local.get('menu')
+   if (activeMenu){
      setMenuActive([activeMenu.parentId,activeMenu.childrenId])
+   }
 
   })
   const [menuActive,setMenuActive]=useState([0,0])
