@@ -10,6 +10,7 @@ function ProfileBuyer() {
     const fetchProfile = async () => {
       let res = await request.post('/user', { id: user.id });
       setProfile(res);
+      console.log("data",res)
     }
     fetchProfile()
   }, [])
@@ -66,7 +67,7 @@ function ProfileBuyer() {
               <label htmlFor='' className='profile-label'>
                 Email
               </label>
-              <p className='profile-input' >{profile.email}</p>
+              <p className='profile-input' >{profile?.email}</p>
             </div>
 
             {/* SĐT */}
@@ -74,7 +75,7 @@ function ProfileBuyer() {
               <label htmlFor='' className='profile-label'>
                 Số Điện Thoại
               </label>
-              <p className='profile-input'>{profile.phone}</p>
+              <p className='profile-input'>{profile?.phone}</p>
               
             </div>
 
@@ -85,11 +86,11 @@ function ProfileBuyer() {
                 Giới tính
               </label>
               <form className='profile-gender'>
-                <input checked={profile.gender === "nam" ? true : false} className='gender' name='gioitinh' type='radio' value='Nam' onChange={(e) => handleChangeProfile('gender','nam')}/>
+                <input checked={profile?.gender === "nam" ? true : false} className='gender' name='gioitinh' type='radio' value='Nam' onChange={(e) => handleChangeProfile('gender','nam')}/>
                 Nam
-                <input checked={profile.gender === "nu" ? true : false}  className='gender' name='gioitinh' type='radio' value='Nữ' onChange={(e) => handleChangeProfile('gender','nu')}/>
+                <input checked={profile?.gender === "nu" ? true : false}  className='gender' name='gioitinh' type='radio' value='Nữ' onChange={(e) => handleChangeProfile('gender','nu')}/>
                 Nữ
-                <input checked={profile.gender === "khac" ? true : false}  className='gender' name='gioitinh' type='radio' value='Khác' onChange={(e) => handleChangeProfile('gender','khac')}/>
+                <input checked={profile?.gender === "khac" ? true : false}  className='gender' name='gioitinh' type='radio' value='Khác' onChange={(e) => handleChangeProfile('gender','khac')}/>
                 Khác
               </form>
             </div>

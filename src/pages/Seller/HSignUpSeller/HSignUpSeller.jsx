@@ -11,7 +11,7 @@ import local from 'services/local'
 
 import './hSignUpSeller.scss'
 
-function HSignUpSeller() {
+function HSignUpSeller(props) {
   const history = useHistory()
   const user = local.get('user')
 
@@ -53,8 +53,10 @@ function HSignUpSeller() {
       shopAddress,
     })
     if (res?.error === 1) return helper.toast('error', 'Loi')
+  if (res){
     helper.toast('success', 'Tạo shop thành công')
-    history.push('/seller/home-center')
+    props.history.push('/seller/home-center')
+  }else  helper.toast('danger', 'Đã có lỗi xảy ra')
   }
 
   return (

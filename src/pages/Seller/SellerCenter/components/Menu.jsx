@@ -1,6 +1,7 @@
 import '../style/menuStyle.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import local from 'services/local'
 function Menu(props){
   const menuData=[
     {
@@ -107,21 +108,9 @@ function Menu(props){
         {
           id: 1,
           sort: 1,
-          name: 'Danh sách đấu giá',
-          path: '/seller/home-center/auctions?page=0&size=10',
-        },
-        {
-          id: 2,
-          sort: 2,
           name: 'Đăng bán sản phẩm',
           path: '/seller/home-center/product/add',
         },
-        {
-          id: 3,
-          sort: 3,
-          name: 'Đăng đấu giá',
-          path: '/seller/home-center/auction/add',
-        }
       ]
     },
     {
@@ -179,28 +168,51 @@ function Menu(props){
         {
           id: 1,
           sort: 1,
-          name: 'Chương trình Chozoi',
+          name: 'Chương trình Shopki',
           path: '/seller/home-center/campaign?page=0&size=5'
         }
       ]
     }
   ]
+  useEffect(()=>{
+     let activeMenu=local.get('menu')
+     setMenuActive([activeMenu.parentId,activeMenu.childrenId])
+
+  })
   const [menuActive,setMenuActive]=useState([0,0])
   const handleChangeMenu=async (parent,children)=>{
     let chose={};
-    if (parent.path){
-      chose= {
-        parentTitle:parent.title,
-        childrenTitle:children.name,
-        path:parent.path
+    let choseMenuActive={}
+    if (children){
+      if (parent.path){
+        chose= {
+          parentTitle:parent.title,
+          childrenTitle:children.name,
+          path:parent.path
+        }
+        choseMenuActive={parentId:parent.id,childrenId:children.id,parentTitle:parent.title,
+          childrenTitle:children.name}
+        localStorage.setItem('menu',JSON.stringify(choseMenuActive))
+      }else {
+        chose= {
+          parentTitle:parent.title,
+          childrenTitle:children.name,
+          path:children.path
+        }
+        choseMenuActive={parentId:parent.id,childrenId:children.id,parentTitle:parent.title,
+          childrenTitle:children.name}
+        localStorage.setItem('menu',JSON.stringify(choseMenuActive))
       }
     }else {
-       chose= {
-        parentTitle:parent.title,
-        childrenTitle:children.name,
-        path:children.path
+      chose= {
+        parentTitle:"Tổng quan cửa hàng",
+        childrenTitle:"",
+        path:parent.path
       }
+      choseMenuActive={parentId:parent.id,childrenId:-1,parentTitle:"Tổng quan cửa hàng",childrenTitle:""}
+      localStorage.setItem('menu',JSON.stringify(choseMenuActive))
     }
+
 
     props.handleChangeMenu(chose);
   }
@@ -213,7 +225,7 @@ function Menu(props){
               <li key={i}
                   className={`${menuActive[0] === value.id ? "active-sub active" : ""}`}>
                 <Link to={value.path ? value.path : '#'}
-                      onClick={() => setMenuActive ([value.id, -1]) }>
+                      onClick={() => {setMenuActive ([value.id, -1]);handleChangeMenu(value,null)} }>
                   {value.icon}
                   <span className="menu-title">{value.title}</span>
                   {value.children && <i className="arrow"/>}
@@ -225,7 +237,7 @@ function Menu(props){
 
                     return render && <li key={index1}
                                          className={(menuActive[0] === value.id) && (menuActive[1] === children.id) ? "active-link" : ""}>
-                      <Link to={children.path} className={"children"}  onClick={() => {handleChangeMenu(value,children)}}>{children.name}</Link>
+                      <Link to={children.path} className={"children"}  onClick={() => {setMenuActive ([value.id, children.id]);handleChangeMenu(value,children)}}>{children.name}</Link>
                     </li>
                   })}
                 </ul>}
