@@ -5,8 +5,11 @@ import local from '../../../../services/local'
 function PageRight(props){
   useEffect(()=>{
     let activeMenu=local.get('menu')
-    setParentTitle(activeMenu.parentTitle)
-    setChildrenTitle(activeMenu.childrenTitle)
+    if (activeMenu){
+      setParentTitle(activeMenu.parentTitle)
+      setChildrenTitle(activeMenu.childrenTitle)
+    }
+
   })
   const [parentTitle,setParentTitle]=useState();
   const [childrenTitle,setChildrenTitle]=useState();
