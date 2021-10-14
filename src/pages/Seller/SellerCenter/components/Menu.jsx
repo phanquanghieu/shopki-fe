@@ -1,6 +1,7 @@
 import '../style/menuStyle.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import local from 'services/local'
 function Menu(props){
   const menuData=[
     {
@@ -107,21 +108,9 @@ function Menu(props){
         {
           id: 1,
           sort: 1,
-          name: 'Danh sách đấu giá',
-          path: '/seller/home-center/auctions?page=0&size=10',
-        },
-        {
-          id: 2,
-          sort: 2,
           name: 'Đăng bán sản phẩm',
           path: '/seller/home-center/product/add',
         },
-        {
-          id: 3,
-          sort: 3,
-          name: 'Đăng đấu giá',
-          path: '/seller/home-center/auction/add',
-        }
       ]
     },
     {
@@ -185,9 +174,15 @@ function Menu(props){
       ]
     }
   ]
+  useEffect(()=>{
+     let activeMenu=local.get('menu')
+     setMenuActive([activeMenu.parentId,activeMenu.childrenId])
+
+  })
   const [menuActive,setMenuActive]=useState([0,0])
   const handleChangeMenu=async (parent,children)=>{
     let chose={};
+    let choseMenuActive={}
     if (children){
       if (parent.path){
         chose= {
@@ -195,12 +190,18 @@ function Menu(props){
           childrenTitle:children.name,
           path:parent.path
         }
+        choseMenuActive={parentId:parent.id,childrenId:children.id,parentTitle:parent.title,
+          childrenTitle:children.name}
+        localStorage.setItem('menu',JSON.stringify(choseMenuActive))
       }else {
         chose= {
           parentTitle:parent.title,
           childrenTitle:children.name,
           path:children.path
         }
+        choseMenuActive={parentId:parent.id,childrenId:children.id,parentTitle:parent.title,
+          childrenTitle:children.name}
+        localStorage.setItem('menu',JSON.stringify(choseMenuActive))
       }
     }else {
       chose= {
@@ -208,6 +209,8 @@ function Menu(props){
         childrenTitle:"",
         path:parent.path
       }
+      choseMenuActive={parentId:parent.id,childrenId:-1,parentTitle:"Tổng quan cửa hàng",childrenTitle:""}
+      localStorage.setItem('menu',JSON.stringify(choseMenuActive))
     }
 
 

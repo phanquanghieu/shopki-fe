@@ -44,9 +44,10 @@ request.put = async (url = '', data = {}) => {
   })
 }
 
-request.delete = async (url = '') => {
+request.delete = async (url = '', data = {}) => {
   return await sendRequest(url, {
     method: 'DELETE',
+    body: JSON.stringify(data)
   })
 }
 
