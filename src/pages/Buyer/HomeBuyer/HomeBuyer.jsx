@@ -48,7 +48,9 @@ const getProduct=async ()=>{
             )
           })}
         </div>
+       
       </div>
+    
     </div>
   )
 }
