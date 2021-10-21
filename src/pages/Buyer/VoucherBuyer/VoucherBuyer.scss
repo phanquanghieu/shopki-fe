@@ -14,30 +14,45 @@
             margin-right: 10px;
            margin-bottom: 10px;
            
+           
             .voucher__item-link{
                 display: flex;
                 box-shadow: 0 0 10px rgba(0,0,0, 0.3);
                padding-right: 10px;
                 // background-color: lightcyan;
-                
+                min-height:100px;
                 width: 100%;
 
                 .voucher__item-img{
-                    width: 89px;
+                    min-height:90px;
                     object-fit: contain;
                     width: 25%;
+                    background-color:#ee4d2d;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    padding: 10px;
+                    .voucher__item-img-name{
+                        align-self: center;
+                        // padding: 10px;
+                        text-align:center;
+                        color: #fff;
+                    }
 
                 }
                 .voucher__item-info{
                     padding: 0 12px;
                     align-self: center;
                     width: 50%;
-                    .voucher__item-name{
-                        margin: 0 0 8px 0px;
-                    }
+                    
                     .voucher__item-description{
                         margin: 0 0 8px 0;
                     }
+                    .voucher__item-date{
+                        color:red;
+                    }
+                    
                 }
                 .voucher__item-button{
                     width:25%;

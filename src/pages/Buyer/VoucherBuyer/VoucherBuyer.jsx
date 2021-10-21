@@ -29,10 +29,12 @@ function VoucherBuyer() {
          <li className="voucher__item">
          <a href="" className="voucher__item-link">
            
-           <img src={voucher.img} alt="" className="voucher__item-img" />
+           <div className="voucher__item-img">
+              <div className="voucher__item-img-name">{voucher.name}</div>
+           </div>
            <div className="voucher__item-info">
-               <p className="voucher__item-name">{voucher.name}</p>
                <p className="voucher__item-description">{voucher.description}</p>
+               <p className="voucher__item-date">{voucher.date}</p>
            </div>
            <div className="voucher__item-button">
              <a className="voucher__item-apply">Dùng ngay</a>

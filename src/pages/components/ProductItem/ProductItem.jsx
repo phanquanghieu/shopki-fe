@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './productItem.scss'
 import request from 'services/request'
 import local from 'services/local'
+import helper from 'services/helper'
 
 const user = local.get('user')
 function ProductItem(props) {
@@ -11,9 +12,10 @@ function ProductItem(props) {
  await setProductItem(props.product);
 
   if(user){
-    const cart = await request.post('/api/cart/create', {shop:props.product.name, img : props.product.img , product: props.product.name, price:props.product.price,quantity: 1 , user_id: user.id});
+    const cart = await request.post('/api/cart/create', {shop:props.product.shop.name, img : props.product.img , product: props.product.name, price:props.product.price,quantity: 1 , user_id: user.id});
   
     if(cart){
+      helper.toast('success', 'them gio hang thanh cong')
       console.log("them gio hang thanh cong");//viet thong bao o day0
     }else console.log("da co loi xay ra") //thong bao loi cho nguoi dung
   }else console.log("khong co user")
@@ -67,37 +69,10 @@ function ProductItem(props) {
           <i className="fas fa-cart-plus"></i>
         </div>
       </div>
+      
+     
     </div>
-//     <div class="modal">
-//     <div class="modal-containe">
-//         <div class="modal-close">
-//             <i class="ti-close"></i>
-//         </div>
-//         <header class="modal-heading">
-//             <i class="modal-heading-icon ti-bag"></i>
-//             Tickets
-//         </header>
-//         <div class="modal-body">
-//             <label for="quantity" class="modal-label">
-//                 <i class="ti-shopping-cart"></i>
-//                 Tickets, $15 per person
-//             </label>
 
-//             <input id="quantity" type="text" class="modal-input" placeholder="How many?">
-//             <label for="email" class="modal-label">
-//                 <i class="ti-user"></i>
-//                 Send to
-//             </label>
-//             <input id="email" type="email" class="modal-input" placeholder="Enter email">
-//             <button id="buy-tickets">Pay
-//                 <i class="ti-check"></i>
-//             </button>
-//         </div>
-//         <footer class="modal-footer">
-//             <p class="modal-help">Need <a href="">help</a></p>
-//         </footer>
-//     </div>
-// </div>
   )
 }
 
