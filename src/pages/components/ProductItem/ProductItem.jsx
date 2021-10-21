@@ -1,28 +1,12 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './productItem.scss'
-import request from 'services/request'
 import local from 'services/local'
-import helper from 'services/helper'
 import { Link } from 'react-router-dom'
 
 const user = local.get('user')
+
 function ProductItem(props) {
   const discount = 100 - Math.round((100 * props.product.promoPrice) / props.product.price)
-  const handleAddToCart=async(id)=>{
-
- await setProductItem(props.product);
-
-  if(user){
-    const cart = await request.post('/api/cart/create', {shop:props.product.shop.name, img : props.product.img , product: props.product.name, price:props.product.price,quantity: 1 , user_id: user.id});
-  
-    if(cart){
-      helper.toast('success', 'them gio hang thanh cong')
-      console.log("them gio hang thanh cong");//viet thong bao o day0
-    }else console.log("da co loi xay ra") //thong bao loi cho nguoi dung
-  }else console.log("khong co user")
-  } 
-
-  const[productItem,setProductItem] = useState()
 
   return (
     <div className='h-product-item'>
@@ -67,9 +51,9 @@ function ProductItem(props) {
               </div>
             </div>
           </div>
-          <div className="position-absolute add-to-cart" onClick={()=>handleAddToCart(props.product.id)}>
-           <i className="fas fa-cart-plus"></i>
-          </div>
+          {/*<div className='position-absolute add-to-cart' onClick={() => handleAddToCart(props.product.id)}>*/}
+          {/*  <i className='fas fa-cart-plus'></i>*/}
+          {/*</div>*/}
         </div>
       </Link>
 
