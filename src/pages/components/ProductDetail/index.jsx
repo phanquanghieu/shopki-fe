@@ -9,7 +9,7 @@ function ProductDetail(props) {
      await getProduct();
    }
 
-  })
+  },[])
   const [product,setProduct]=useState([]);
   const getProduct=async ()=>{
     let res = await request.post('/api/product/getById',{

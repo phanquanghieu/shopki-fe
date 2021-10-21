@@ -7,7 +7,6 @@ import local from 'services/local'
 function BuyerLayoutHeader() {
   const history = useHistory()
   const user = auth.getUser()
-  console.log(user)
 
   const handleLogout = () => {
     local.clear()
