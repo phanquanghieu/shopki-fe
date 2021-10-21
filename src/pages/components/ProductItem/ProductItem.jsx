@@ -50,9 +50,9 @@ function ProductItem(props) {
               </div>
             </div>
           </div>
-          {/*<div className="position-absolute add-to-cart" onClick={()=>handleAddToCart(props.product.id)}>*/}
-          {/*  <i className="fas fa-cart-plus"></i>*/}
-          {/*</div>*/}
+          <div className="position-absolute add-to-cart" onClick={()=>handleAddToCart(props.product.id)}>
+            <i className="fas fa-cart-plus"></i>
+          </div>
         </div>
       </Link>
 

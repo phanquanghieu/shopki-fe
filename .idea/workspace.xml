@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/components/ProductDetail/components/ProductInformation.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/components/ProductDetail/style/productInformationStyle.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/BuyerLayout/buyerLayout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BuyerLayout/buyerLayout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/components/ProductDetail/components/ProductInformation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/components/ProductDetail/components/ProductInformation.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/components/ProductDetail/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/components/ProductDetail/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/components/ProductItem/ProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/components/ProductItem/ProductItem.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +102,8 @@
       <workItem from="1634133676531" duration="2780000" />
       <workItem from="1634216761451" duration="3458000" />
       <workItem from="1634698007889" duration="1074000" />
-      <workItem from="1634721175050" duration="3074000" />
+      <workItem from="1634721175050" duration="3600000" />
+      <workItem from="1634785284894" duration="1389000" />
     </task>
     <servers />
   </component>

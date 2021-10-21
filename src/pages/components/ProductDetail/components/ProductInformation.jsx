@@ -11,10 +11,10 @@ function ProductInformation(props){
       </div>
       <div className="product-information">
         <div className="name-product">
-          <h1>Chinh ahihi</h1>
+          <h1>{props.product.name}</h1>
         </div>
         <div className="price">
-          <p>500.000 đ</p>
+          <p>{props.product.price} đ</p>
         </div>
         <div className="add-to-cart">
           <div className="position-absolute add-to-cart" onClick={()=>handleAddToCart(props.product.id)}>
