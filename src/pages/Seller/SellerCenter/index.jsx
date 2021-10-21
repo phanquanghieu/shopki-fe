@@ -13,7 +13,7 @@ function SellerCenter(props){
   const user = local.get('user')
   useEffect(()=>{
     if (user){
-      if (!user.shopId){
+      if (!user.shop_id){
         props.history.push("/seller/register")
       }
     }
