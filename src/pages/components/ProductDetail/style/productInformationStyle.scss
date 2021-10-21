@@ -1,0 +1,28 @@
+#product-detail{
+  margin-top: 30px;
+  .image-product{
+    width: 500px;
+    height: 500px;
+    background-color: #ECECEC;
+    margin-right: 30px;
+  }
+  .product-information{
+    .name-product{
+      h1{
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+    .price{
+      p{
+        font-size: 30px;
+        color: #dc3545;
+      }
+    }
+    .add-to-cart{
+      i{
+        font-size: 30px;
+      }
+    }
+  }
+}
