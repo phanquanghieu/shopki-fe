@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 function ProductItem(props) {
   const discount = 100 - Math.round((100 * props.product.promoPrice) / props.product.price)
-  const handleAddToCart=(id)=>{
-    console.log(id)
-  }
+  // const handleAddToCart=(id)=>{
+  //   console.log(id)
+  // }
   return (
     <div className='h-product-item'>
       <Link to={`/product-detail/${props.product.id}`}>
@@ -50,9 +50,9 @@ function ProductItem(props) {
               </div>
             </div>
           </div>
-          <div className="position-absolute add-to-cart" onClick={()=>handleAddToCart(props.product.id)}>
-            <i className="fas fa-cart-plus"></i>
-          </div>
+          {/*<div className="position-absolute add-to-cart" onClick={()=>handleAddToCart(props.product.id)}>*/}
+          {/*  <i className="fas fa-cart-plus"></i>*/}
+          {/*</div>*/}
         </div>
       </Link>
 
