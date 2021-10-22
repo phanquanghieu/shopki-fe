@@ -11,6 +11,12 @@ function CreateProduct(props) {
   const [imageUrl, setImageUrl] = useState('')
   const handleCreateProduct = async () => {
 
+    let shopId = ''
+    if (local.get('user')) {
+      shopId = local.get('user').shop_id
+    }else {
+      localStorage.removeItem('user')
+    }
     if (nameProduct === '') {
       helper.toast('danger', 'nhập tên sản phẩm')
       return false
@@ -23,15 +29,11 @@ function CreateProduct(props) {
       helper.toast('danger', 'Nhập link ảnh')
       return false
     }
-    let shopId = ''
-    if (local.get('user')) {
-      shopId = local.get('user').shop_id
-    }
+
     const result = await createProduct(shopId, nameProduct, price, description, imageUrl)
     if (result?.error) return helper.toast('danger', 'Create error')
 
     helper.toast('success', 'Create success')
-    // resetValue()
   }
   const resetValue = () => {
     setNameProduct('')

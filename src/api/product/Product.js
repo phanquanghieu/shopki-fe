@@ -14,9 +14,6 @@ export const createProduct=async (shopId,name,price,description,imageUrl)=>{
     )
     if (!response.ok) return { error: 1, message: 'Server error' }
     response = await response.json()
-    local.set('user', response?.user)
-    local.set('token', response.token)
-
     return response
   } catch (error) {
     console.error(error)
