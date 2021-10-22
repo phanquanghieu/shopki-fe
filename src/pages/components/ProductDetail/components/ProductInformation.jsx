@@ -31,7 +31,8 @@ function ProductInformation(props){
   return(
     <div id="product-detail" className="container d-flex">
       <div className="image-product">
-
+        {props.product.imageUrl?<img src={props.product.imageUrl}/>
+          :<></>}
       </div>
       <div className="product-information">
         <div className="name-product">

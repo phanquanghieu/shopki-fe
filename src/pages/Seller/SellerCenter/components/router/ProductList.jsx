@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import request from '../../../../../services/request'
 import '../../style/productList.scss'
 import toast from '../../../../../libs/Toast/Toast'
+import local from '../../../../../services/local'
 
 function ProductList() {
   useEffect(async () => {
@@ -9,7 +10,7 @@ function ProductList() {
      const res = await request.get('/api/product')
      setProducts(res.products)
    }
-  })
+  },[])
   const [products, setProducts] = useState([])
   const [isDelete, setIsDelete] = useState(false)
   const [isEdit, setIsEdit] = useState(false)
@@ -67,7 +68,8 @@ function ProductList() {
               <div className='product d-flex justify-content-between'>
                 <div className='d-flex'>
                   <div className='image-product'>
-
+                    {value.imageUrl?<img src={value.imageUrl}/>
+                    :<></>}
                   </div>
                   <div className='name-product'>
                     {value.name}
