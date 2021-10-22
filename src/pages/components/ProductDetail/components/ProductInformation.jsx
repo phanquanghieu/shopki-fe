@@ -39,14 +39,33 @@ function ProductInformation(props){
           <h1>{props.product.name}</h1>
         </div>
         <div className="price">
-          <p>{props.product.price} đ</p>
+          <p>Giá: {props.product.price} đ</p>
         </div>
-        <div className="add-to-cart">
-          <div className="position-absolute add-to-cart" onClick={()=>handleAddToCart(props.product.id)}>
+        <div className="d-flex align-items-center">
+          <div className="btn-buy-now">
+            <button>Mua ngay</button>
+          </div>
+          <div className="add-to-cart" onClick={()=>handleAddToCart(props.product.id)}>
             <i className="fas fa-cart-plus"></i>
           </div>
         </div>
+        <div className="description">
+          <h2>Mô tả sản phẩm</h2>
+          <p>{props.product.description}</p>
+        </div>
       </div>
+      {props.product.shop&&<div className="shop-information d-flex">
+        <div className="image-shop">
+
+        </div>
+        <div className="info">
+          <p className="name-shop">{props.product.shop.name}</p>
+          <div className="btn-nav">
+            <button>Tham quan shop</button>
+            <button>Yêu thích</button>
+          </div>
+        </div>
+      </div>}
     </div>
   )
 }
