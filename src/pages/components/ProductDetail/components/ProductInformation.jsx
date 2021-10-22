@@ -48,6 +48,9 @@ function ProductInformation(props){
           <div className="add-to-cart" onClick={()=>handleAddToCart(props.product.id)}>
             <i className="fas fa-cart-plus"></i>
           </div>
+          <div className="favourite">
+            <i className="fas fa-heart"></i>
+          </div>
         </div>
         <div className="description">
           <h2>Mô tả sản phẩm</h2>
