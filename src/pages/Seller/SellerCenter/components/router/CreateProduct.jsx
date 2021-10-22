@@ -12,9 +12,15 @@ function CreateProduct(props) {
   const handleCreateProduct = async () => {
 
     if (nameProduct === '') {
+      helper.toast('danger', 'nhập tên sản phẩm')
       return false
     }
     if (price === 0) {
+      helper.toast('danger', 'Nhập giá')
+      return false
+    }
+    if (imageUrl===''){
+      helper.toast('danger', 'Nhập link ảnh')
       return false
     }
     let shopId = ''
