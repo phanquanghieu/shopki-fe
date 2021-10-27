@@ -13,6 +13,8 @@ function ProductInformation(props){
     await setProductItem(props.product)
 
     if (user) {
+     
+      
       const cart = await request.post('/api/cart/create', {
         shop: props.product.shop.name,
         img: props.product.img,
@@ -21,6 +23,7 @@ function ProductInformation(props){
         quantity: 1,
         user_id: user.id
       })
+
 
       if (cart) {
         helper.toast('success', 'them gio hang thanh cong')
