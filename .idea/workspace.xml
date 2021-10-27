@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="" />
+    <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Buyer/HomeBuyer/HomeBuyer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Buyer/HomeBuyer/HomeBuyer.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new.cp.chozoi.vn" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test html" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -103,6 +106,11 @@
       <workItem from="1634869406910" duration="596000" />
       <workItem from="1634872629936" duration="2539000" />
       <workItem from="1634884573807" duration="5226000" />
+      <workItem from="1635053626483" duration="563000" />
+      <workItem from="1635086870761" duration="2228000" />
+      <workItem from="1635122289018" duration="374000" />
+      <workItem from="1635124520573" duration="1979000" />
+      <workItem from="1635326093131" duration="1517000" />
     </task>
     <servers />
   </component>
