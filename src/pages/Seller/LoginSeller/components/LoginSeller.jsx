@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../style/loginStyle.scss'
 import { Link } from 'react-router-dom'
 import ForgotPassword from './forgotPassword'
 import auth from '../../../../services/auth'
 import helper from '../../../../services/helper'
+import local from '../../../../services/local'
 
 function LoginSeller(props) {
+  useEffect(()=>{
+    if (local.get('user')){
+      props.history.push('/seller/home-center')
+    }
+  },[])
   const [isShowPass, setIsShowPass] = useState(false)
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')

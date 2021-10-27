@@ -11,18 +11,21 @@ function ProductDetail(props) {
 
   // },[])
   const [product,setProduct]=useState([]);
+  const [loading,setLoading]=useState(false);
   const getProduct=async ()=>{
+    setLoading(true)
     let res = await request.post('/api/product/getById',{
       id:props.match.params.id
     });
     if (res){
       setProduct(res.product);
+      setLoading(false);
     }
   }
   return (
     <div>
       <BuyerLayoutHeader />
-      <ProductInformation product={product}/>
+      <ProductInformation product={product} loading={loading}/>
     </div>
   )
 }
