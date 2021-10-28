@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/WareHouse.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/WarehouseDetail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/warehouse.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/warehouseDetail.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/HomeRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/HomeRouter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/Menu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/CreateProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/CreateProduct.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/ProductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/ProductList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/productList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/productList.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test html" />
+    <property name="last_opened_file_path" value="$USER_HOME$/test html" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
