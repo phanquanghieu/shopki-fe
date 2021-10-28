@@ -1,14 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createProduct } from '../../../../../api/product/Product'
 import helper from '../../../../../services/helper'
 import local from '../../../../../services/local'
 import '../../style/createProduct.scss'
+import request from '../../../../../services/request'
 
 function CreateProduct(props) {
+  useEffect(()=>{
+
+    setIdWare(parseInt(props.match.params.id))
+  },[])
   const [nameProduct, setNameProduct] = useState('')
   const [price, setPrice] = useState(0)
   const [description, setDescription] = useState('')
   const [imageUrl, setImageUrl] = useState('')
+  const [idWare,setIdWare]=useState(0);
   const handleCreateProduct = async () => {
 
     let shopId = ''
@@ -29,11 +35,20 @@ function CreateProduct(props) {
       helper.toast('danger', 'Nhập link ảnh')
       return false
     }
+    if (props.match.params.query!=="ware"){
+      const result = await createProduct(shopId, nameProduct, price, description, imageUrl)
+      if (result?.error) return helper.toast('danger', 'Create error')
 
-    const result = await createProduct(shopId, nameProduct, price, description, imageUrl)
-    if (result?.error) return helper.toast('danger', 'Create error')
+      helper.toast('success', 'Create success')
+    }else {
+      const result = await request.post("/api/warehouse/product/create",{
+        shopId,name:nameProduct,price,description,imageUrl,warehouse_id:idWare
+      })
+      if (result?.error) return helper.toast('danger', 'Create error')
 
-    helper.toast('success', 'Create success')
+      helper.toast('success', 'Create success')
+    }
+
   }
   const resetValue = () => {
     setNameProduct('')
