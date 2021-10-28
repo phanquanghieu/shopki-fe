@@ -45,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new.cp.chozoi.vn" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test html" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -114,7 +114,6 @@
       <workItem from="1634869406910" duration="596000" />
       <workItem from="1634872629936" duration="2539000" />
       <workItem from="1634884573807" duration="5226000" />
-      <workItem from="1635389270803" duration="11066000" />
     </task>
     <servers />
   </component>
