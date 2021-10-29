@@ -173,6 +173,20 @@ function Menu(props) {
           path: '/seller/home-center/campaign?page=0&size=5'
         }
       ]
+    },
+    {
+      id: 7,
+      sort: 7,
+      title: 'Kho hàng',
+      icon: <i className='fas fa-store' />,
+      children: [
+        {
+          id: 0,
+          sort: 0,
+          name: 'Sản phẩm',
+          path: '/seller/home-center/warehouse'
+        }
+      ]
     }
   ]
   useEffect(() => {

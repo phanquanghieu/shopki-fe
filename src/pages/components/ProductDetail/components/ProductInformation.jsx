@@ -61,7 +61,7 @@ function ProductInformation(props){
         </div>
         {props.product.shop&&<div className="shop-information d-flex">
           <div className="image-shop">
-
+            {props.product.shop.img?<img src={props.product.shop.img}/>:""}
           </div>
           <div className="info">
             <p className="name-shop">{props.product.shop.name}</p>
