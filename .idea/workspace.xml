@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/shopInformation.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Buyer/HomeBuyer/HomeBuyer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Buyer/HomeBuyer/HomeBuyer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/ProfileShop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/ProfileShop.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/ProductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/ProductList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/ShopInformation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/ShopInformation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/WareHouse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/WareHouse.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/WarehouseDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/WarehouseDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/productList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/productList.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/profileShopStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/profileShopStyle.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/warehouseDetail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/warehouseDetail.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +115,7 @@
       <workItem from="1634869406910" duration="596000" />
       <workItem from="1634872629936" duration="2539000" />
       <workItem from="1634884573807" duration="5226000" />
+      <workItem from="1635475161591" duration="7744000" />
     </task>
     <servers />
   </component>

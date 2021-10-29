@@ -106,40 +106,42 @@ function ProductList() {
               </div>
             )
           })}
-          {isDelete &&
-          <div>
-            <div className='nen' onClick={()=>setIsDelete(false)}/>
-            <div className='confirm-delete position-absolute'>
-              <h2>Bạn có chắc muốn xóa sản phẩm này?</h2>
-              <div className='btn-confirm d-flex justify-content-center'>
-                <button onClick={()=>handleDeleteProduct()}>Có</button>
-                <button onClick={()=>setIsDelete(false)}>Không</button>
-              </div>
-            </div>
-          </div>}
-          {isEdit&&<div>
-            <div className="nen" onClick={()=>setIsEdit(false)}>
-            </div>
-            <div className="edit-product">
-              <div className="title-edit">
-                <p>Chỉnh sửa sản phẩm</p>
-              </div>
-              <div className="form-edit">
-                <div className="name-product">
-                  <p>Tên sản phẩm</p>
-                  <input value={productEdit.name} placeholder="tên sản phẩm" onChange={(e)=>handleChanValue(e,'name')}/>
-                </div>
-                <div className="price">
-                  <p>Giá sản phẩm</p>
-                  <input value={productEdit.price} placeholder="giá sản phẩm" onChange={(e)=>handleChanValue(e,'price')}/>
-                </div>
-              </div>
-              <div className="btn-confirm d-flex justify-content-center">
-                <button onClick={()=>handleEditProduct()}>Xác nhận</button>
-              </div>
-            </div>
-          </div>}
+
+
         </div>
+        {isDelete &&
+        <div>
+          <div className='nen' onClick={()=>setIsDelete(false)}/>
+          <div className='confirm-delete position-absolute'>
+            <h2>Bạn có chắc muốn xóa sản phẩm này?</h2>
+            <div className='btn-confirm d-flex justify-content-center'>
+              <button onClick={()=>handleDeleteProduct()}>Có</button>
+              <button onClick={()=>setIsDelete(false)}>Không</button>
+            </div>
+          </div>
+        </div>}
+        {isEdit&&<div>
+          <div className="nen" onClick={()=>setIsEdit(false)}>
+          </div>
+          <div className="edit-product">
+            <div className="title-edit">
+              <p>Chỉnh sửa sản phẩm</p>
+            </div>
+            <div className="form-edit">
+              <div className="name-product">
+                <p>Tên sản phẩm</p>
+                <input value={productEdit.name} placeholder="tên sản phẩm" onChange={(e)=>handleChanValue(e,'name')}/>
+              </div>
+              <div className="price">
+                <p>Giá sản phẩm</p>
+                <input value={productEdit.price} placeholder="giá sản phẩm" onChange={(e)=>handleChanValue(e,'price')}/>
+              </div>
+            </div>
+            <div className="btn-confirm d-flex justify-content-center">
+              <button onClick={()=>handleEditProduct()}>Xác nhận</button>
+            </div>
+          </div>
+        </div>}
       </div>
     )
   } else {

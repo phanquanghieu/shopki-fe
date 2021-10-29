@@ -3,7 +3,7 @@ function ProfileShop(props){
   return(
     <div id="profile-shop" className="d-flex flex-column justify-content-center align-items-center">
       <div className="image-shop d-flex justify-content-center align-items-center">
-        <i className="fas fa-user"/>
+        {props.shop.img?<img src={props.shop.img}/>: <i className="fas fa-user"/>}
       </div>
       <div className="name w-100 text-center">
         <h2>{props.shop?.name}</h2>

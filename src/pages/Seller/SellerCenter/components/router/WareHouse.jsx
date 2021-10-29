@@ -33,6 +33,7 @@ function WareHouse(){
 if (warehouses.length!==0){
   return(
     <div className="list-warehouse container justify-content-center">
+      <h2 style={{marginBottom:"20px"}}>Vui lòng chọn kho!</h2>
       {warehouses.map((value,i)=>{
         return(
           <div className="warehouse d-flex justify-content-between align-items-center">
