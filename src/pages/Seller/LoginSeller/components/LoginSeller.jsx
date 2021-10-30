@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../style/loginStyle.scss'
 import { Link } from 'react-router-dom'
 import ForgotPassword from './forgotPassword'
 import auth from '../../../../services/auth'
 import helper from '../../../../services/helper'
+import local from '../../../../services/local'
 
 function LoginSeller(props) {
+  useEffect(()=>{
+    if (local.get('user')){
+      props.history.push('/seller/home-center')
+    }
+  },[])
   const [isShowPass, setIsShowPass] = useState(false)
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
@@ -66,9 +72,9 @@ function LoginSeller(props) {
       <div className='header-login'>
         <div className='container d-flex justify-content-between align-items-center'>
           <div className='logo d-flex'>
-            <Link to='/seller'>ShopKi</Link>
+            <Link to='/'>ShopKi</Link>
             <div className='nav-login d-flex align-items-center'>
-              <h2>Đăng nhập</h2>/<Link to='/seller/register'>Đăng ký</Link>
+              <h2>Đăng nhập</h2>
             </div>
           </div>
           <div className='help'>
@@ -120,12 +126,9 @@ function LoginSeller(props) {
                 <p onClick={() => setIsForgot(true)}>Quên mật khẩu</p>
               </div>
             </div>
-            <div className='footer-form'>
+            <div className='footer-form d-flex justify-content-center'>
               <div>
                 <button onClick={() => handleLogin()}>Đăng nhập</button>
-                <Link to='/seller/register'>
-                  <button>Đăng ký</button>
-                </Link>
               </div>
             </div>
           </div>}

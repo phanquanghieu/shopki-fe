@@ -1,19 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import CategoryCarousel from './components/CategoryCarousel'
 import ProductItem from 'pages/components/ProductItem'
 
 import './homeBuyer.scss'
+import request from '../../../services/request'
 
 function HomeBuyer() {
-  useEffect(() => {
+  useEffect(async () => {
+
     // const fetch = async () => {
     //   let res = await request.get('/todos/2')
     //   console.log(res)
     //   console.log(local.get('sasa'))
     // }
     // fetch()
+    await getProduct()
   }, [])
 
+  const [product, setProduct] = useState([])
+  const getProduct = async () => {
+    let res = await request.get('/api/product')
+    if (res) {
+      setProduct(res.products)
+    }
+  }
   return (
     <div className='h-home-buyer'>
       <div className='h-banner'>
@@ -29,11 +39,19 @@ function HomeBuyer() {
       <div className='h-product'>
         <div className='h-product__header'>GỢI Ý HÔM NAY</div>
         <div className='h-product__list'>
-          {Array.from(Array(20).keys()).map((e, i) => (
-            <ProductItem product={PRODUCTS[0]} />
-          ))}
+          {/*{Array.from(Array(20).keys()).map((e, i) => (*/}
+          {/*  <ProductItem product={PRODUCTS[0]} />*/}
+          {/*))}*/}
+          {product.map((value) => {
+            if (value.export)
+            return (
+              <ProductItem product={value} />
+            )
+          })}
         </div>
+
       </div>
+
     </div>
   )
 }
@@ -48,6 +66,6 @@ const PRODUCTS = [
     price: 300000,
     promoPrice: 250000,
     voucher: '10% giảm',
-    historicalSold: '199',
-  },
+    historicalSold: '199'
+  }
 ]

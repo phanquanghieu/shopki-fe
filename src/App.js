@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -13,12 +13,16 @@ import LoginBuyer from 'pages/Buyer/LoginBuyer'
 import SignUpBuyer from 'pages/Buyer/SignUpBuyer'
 import LoginSeller from 'pages/Seller/LoginSeller'
 import SignUpSeller from 'pages/Seller/HSignUpSeller'
-import BuyerLayoutFooter from './common/footer/BuyerLayoutFooter'
 import SellerCenter from './pages/Seller/SellerCenter'
 import CPLayout from './layouts/CPLayout'
 import ProductDetail from './pages/components/ProductDetail'
-
+import local from './services/local'
 function App() {
+  useEffect(()=>{
+    if (local.get('user')===undefined){
+      localStorage.removeItem('user')
+    }
+  },[])
   return (
     <div>
       <BrowserRouter>

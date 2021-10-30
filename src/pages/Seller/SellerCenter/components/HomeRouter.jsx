@@ -3,13 +3,17 @@ import SignUpSeller from '../../SignUpSeller'
 import React from 'react'
 import ShopInformation from './router/ShopInformation'
 import CreateProduct from './router/CreateProduct'
+import Dashboard from './router/Dashboard'
+import ProductList from './router/ProductList'
+import WareHouse from './router/WareHouse'
+import WarehouseDetail from './router/WarehouseDetail'
 
 function HomeRouter(){
   return(
     <>
       <Route
         exact path='/seller/home-center'
-        render={(props) => <ShopInformation {...props} />}
+        render={(props) => <Dashboard {...props} />}
       />
       <Route
         exact path='/seller/home-center/shop/address'
@@ -20,9 +24,21 @@ function HomeRouter(){
         render={(props) => <ShopInformation {...props} />}
       />
       <Route
-      exact path='/seller/home-center/product/add'
+      exact path='/seller/home-center/product/add/:query/:id'
       render={(props) => <CreateProduct {...props} />}
     />
+      <Route
+      exact path='/seller/home-center/products/state=All'
+      render={(props) => <ProductList {...props} />}
+    />
+      <Route
+      exact path='/seller/home-center/warehouse'
+      render={(props) => <WareHouse {...props} />}
+    />
+      <Route
+        exact path='/seller/home-center/warehouse/:id'
+        render={(props) => <WarehouseDetail {...props} />}
+      />
     </>
   )
 

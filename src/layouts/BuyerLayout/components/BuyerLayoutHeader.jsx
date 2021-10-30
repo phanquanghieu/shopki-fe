@@ -7,7 +7,6 @@ import local from 'services/local'
 function BuyerLayoutHeader() {
   const history = useHistory()
   const user = auth.getUser()
-  console.log(user)
 
   const handleLogout = () => {
     local.clear()
@@ -55,7 +54,7 @@ function BuyerLayoutHeader() {
             ) : (
               <div className='h-header-top__item h-dropdown h-dropdown--profile'>
                 <div className='h-header-top__link h-dropdown__toggle'>
-                  <i className='fas fa-user'></i> {user?.phone}
+                  <i className='fas fa-user'></i> {user.name?user.name:user.phone}
                 </div>
                 <div className='h-dropdown__menu'>
                   <div className='h-menu__item'>
