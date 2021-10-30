@@ -54,12 +54,15 @@ function HSignUpSeller() {
     })
     if (res?.error === 1) return helper.toast('error', 'Loi')
     helper.toast('success', 'Tạo shop thành công')
-    history.push('/seller/home-center')
+    history.push('/seller')
   }
 
   return (
     <div className='h-signup-seller'>
       <div className='h-ss-header'>
+        <Link to='/' style={{ position: 'absolute', left: '5rem' }}>
+          <h2>ShopKi</h2>
+        </Link>
         <h3
           className='h-ss__title'
           onClick={() => setCurrentStep(currentStep === 2 ? 0 : currentStep + 1)}

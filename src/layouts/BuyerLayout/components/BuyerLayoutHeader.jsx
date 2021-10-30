@@ -20,7 +20,7 @@ function BuyerLayoutHeader() {
       <div className='h-header-container'>
         <div className='h-header-top'>
           <div className='h-header-top__left'>
-            <Link to='/seller/login' className='h-header-top__item'>
+            <Link to='/seller' className='h-header-top__item'>
               <div className='h-header-top__link'>Kênh người bán</div>
             </Link>
             <div className='h-header-top__item'>
@@ -55,7 +55,7 @@ function BuyerLayoutHeader() {
             ) : (
               <div className='h-header-top__item h-dropdown h-dropdown--profile'>
                 <div className='h-header-top__link h-dropdown__toggle'>
-                  <i className='fas fa-user'></i> phanquangieu
+                  <i className='fas fa-user'></i> {user?.phone}
                 </div>
                 <div className='h-dropdown__menu'>
                   <div className='h-menu__item'>

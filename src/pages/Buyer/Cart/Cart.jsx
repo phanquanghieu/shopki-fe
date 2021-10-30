@@ -33,7 +33,7 @@ function Cart() {
     const fetchCart= async() =>{
       let res = await request.post('/api/cart' , {id : user.id})
       
-      setCart(res)
+      setCart(res || [])
       console.log(res)
         }
         fetchCart()

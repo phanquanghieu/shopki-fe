@@ -1,17 +1,23 @@
 import classNames from 'classnames'
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import local from 'services/local'
 import './sidebarBuyerPage.scss'
 
 function SidebarBuyerPage() {
   const location = useLocation()
-
+  const user = local.get('user')
   return (
     <div className='h-sidebar-buyer'>
       <Link to='/buyer/account/profile' className='h-profile'>
-        <div className='h-profile__avatar'></div>
+        <img
+          src={'http://localhost:9000/shopki/' + user?.img}
+          style={{ objectFit: 'cover' }}
+          className='h-profile__avatar'
+          alt=''
+        />
         <div className='h-profile__name'>
-          <div className='h-profile__name--name'>phanquanghieu</div>
+          <div className='h-profile__name--name'>{user?.phone}</div>
           <div className='h-profile__name--icon'>
             <i className='fas fa-pencil-alt'></i>Sửa hồ sơ
           </div>

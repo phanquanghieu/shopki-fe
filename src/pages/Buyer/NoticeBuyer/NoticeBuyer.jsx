@@ -10,7 +10,7 @@ function NoticeBuyer() {
   useEffect(() => {
     const fetchNotice = async () =>{
       let res = await request.post('/api/advertise' , {id : user.id})
-      setNotice(res)
+      setNotice(res ||[])
       console.log(res)
     }
     fetchNotice()
