@@ -8,8 +8,12 @@ function ProductList() {
   useEffect(async () => {
    if (products.length===0){
      const res = await request.get('/api/product')
-     if (res.products)
-     setProducts(res.products)
+     if (res){
+       if (res.products)
+       {
+         setProducts(res.products)
+       }
+     }
    }
   },[])
   const [products, setProducts] = useState([])

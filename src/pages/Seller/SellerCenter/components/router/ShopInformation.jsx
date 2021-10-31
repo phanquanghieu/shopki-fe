@@ -31,6 +31,31 @@ const handleChange = (e,type) => {
     setShop(obj)
   }
 }
+const handleUnActiveShop=async (idShop)=>{
+   if (shop){
+     const res=await request.put('/api/shop/unActive',{
+       id:idShop
+     })
+     if (res){
+       if (res.error===0){
+         helper.toast('success', 'Update success!')
+       }else helper.toast('danger', 'fail!')
+     }
+   }
+}
+
+  const handleActiveShop=async (idShop)=>{
+    if (shop){
+      const res=await request.put('/api/shop/active',{
+        id:idShop
+      })
+      if (res){
+        if (res.error===0){
+          helper.toast('success', 'Update success!')
+        }else helper.toast('danger', 'fail!')
+      }
+    }
+  }
 const handleEditShop = async () => {
   const res=await request.post('/api/shop/edit',{
     id:shop.id,
@@ -65,6 +90,7 @@ const handleEditShop = async () => {
         </div>
         <div className="btn-save d-flex justify-content-center">
           <button onClick={()=>handleEditShop()}>Lưu lại</button>
+          {shop.active?<button onClick={()=>handleActiveShop(shop.id)}>Hoạt động</button>:<button onClick={()=>handleUnActiveShop(shop.id)}>Tạm nghỉ</button>}
         </div>
       </div>
     </div>
