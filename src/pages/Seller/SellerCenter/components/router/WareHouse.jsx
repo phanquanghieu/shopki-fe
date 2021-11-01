@@ -30,6 +30,7 @@ function WareHouse(){
      }
    }
   }
+
 if (warehouses.length!==0){
   return(
     <div className="list-warehouse container justify-content-center">
@@ -56,12 +57,15 @@ if (warehouses.length!==0){
           </div>
         )
       })}
+      <Link to={"/seller/home-center/warehouse-create/add"} style={{width:"500px"}} className="d-flex justify-content-center">
+        <i style={{fontSize:"30px",color:"#0d6efd",cursor:"pointer"}} className="fas fa-plus-circle"/>
+      </Link>
     </div>
   )
 }else{
   return (
-    <div>
-      Vui lòng đăng ký kho tại đây!
+    <div className="no-warehouse">
+      Vui lòng đăng ký kho <Link to={"/seller/home-center/warehouse-create/add"}>tại đây</Link>!
     </div>
   )
 }

@@ -10,6 +10,9 @@ function ProfileShop(props){
         <div className="rank">
           <p>Shop chua co rank</p>
         </div>
+        <div>
+          {props.shop.active?<p style={{color:"#dc3545"}}>Shop đang tạm nghỉ ok :)</p>:<p/>}
+        </div>
       </div>
     </div>
   )
