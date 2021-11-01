@@ -16,14 +16,14 @@ function HomeBuyer() {
     // fetch()
     await getProduct()
   }, [])
-  const [product,setProduct]=useState([]);
-const getProduct=async ()=>{
-  let res = await request.get('/api/product');
-  if (res){
-    console.log(res)
-    setProduct(res.products);
+
+  const [product, setProduct] = useState([])
+  const getProduct = async () => {
+    let res = await request.get('/api/product')
+    if (res) {
+      setProduct(res.products)
+    }
   }
-}
   return (
     <div className='h-home-buyer'>
       <div className='h-banner'>
@@ -42,15 +42,16 @@ const getProduct=async ()=>{
           {/*{Array.from(Array(20).keys()).map((e, i) => (*/}
           {/*  <ProductItem product={PRODUCTS[0]} />*/}
           {/*))}*/}
-          {product.map((value)=>{
-            return(
-              <ProductItem product={value}/>
+          {product.map((value) => {
+            if (value.export)
+            return (
+              <ProductItem product={value} />
             )
           })}
         </div>
-       
+
       </div>
-    
+
     </div>
   )
 }
@@ -65,6 +66,6 @@ const PRODUCTS = [
     price: 300000,
     promoPrice: 250000,
     voucher: '10% giảm',
-    historicalSold: '199',
-  },
+    historicalSold: '199'
+  }
 ]

@@ -1,0 +1,29 @@
+.list-warehouse{
+
+  .warehouse{
+    cursor: pointer;
+    margin-bottom: 20px;
+    background-color: #ECECEC;
+    width: 500px;
+    .image{
+      margin-right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #4f5d73;
+      border-radius: 8px;
+    }
+    .btn-nav{
+      button{
+        background-color: #ffffff;
+        margin-right: 20px;
+        border: 1px solid #0d6efd;
+        border-radius: 8px;
+        padding: 6px 8px;
+        &:hover{
+          background-color: #0d6efd;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
