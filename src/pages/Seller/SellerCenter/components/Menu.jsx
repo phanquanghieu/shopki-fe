@@ -164,7 +164,7 @@ function Menu(props) {
           id: 0,
           sort: 0,
           name: 'Mã giảm giá',
-          path: '/seller/home-center/coupon?type=all&page=0'
+          path: '/seller/home-center/coupon'
         },
         {
           id: 1,

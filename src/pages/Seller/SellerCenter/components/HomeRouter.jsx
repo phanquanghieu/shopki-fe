@@ -8,6 +8,7 @@ import ProductList from './router/ProductList'
 import WareHouse from './router/WareHouse'
 import WarehouseDetail from './router/WarehouseDetail'
 import CreateWarehouse from './router/CreateWarehouse'
+import Coupon from './router/Coupon'
 
 function HomeRouter() {
   return (
@@ -44,10 +45,14 @@ function HomeRouter() {
         exact path='/seller/home-center/warehouse/:id'
         render={(props) => <WarehouseDetail {...props} />}
       />
-        <Route
-          exact path='/seller/home-center/warehouse-create/add'
-          render={(props) => <CreateWarehouse {...props} />}
-        />
+      <Route
+        exact path='/seller/home-center/warehouse-create/add'
+        render={(props) => <CreateWarehouse {...props} />}
+      />
+      <Route
+        exact path='/seller/home-center/coupon'
+        render={(props) => <Coupon {...props} />}
+      />
     </>
   )
 
