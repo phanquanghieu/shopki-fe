@@ -62,7 +62,7 @@ if(carts.length!==0){
            <div className="cart__item-body">
              <div className="cart__item-info">
              <input type = "checkbox" className="cart__item-checkbox"></input>
-               <img src={cart.img} alt={cart.img} className="cart__item-img" />
+               <img src={cart.img} alt={cart.product} className="cart__item-img" />
                <p className="Cart__item-name">{cart.product}</p>
              </div>
              <div className="cart__item-dongia">{cart.price}</div>

@@ -4,12 +4,12 @@ import ProductInformation from './components/ProductInformation'
 import request from '../../../services/request'
 
 function ProductDetail(props) {
-  // useEffect(async () => {
-  //  if (product.length===0){
-  //    await getProduct();
-  //  }
+  useEffect(async () => {
+   if (product.length===0){
+     await getProduct();
+   }
 
-  // },[])
+  },[])
   const [product,setProduct]=useState([]);
   const [loading,setLoading]=useState(false);
   const getProduct=async ()=>{

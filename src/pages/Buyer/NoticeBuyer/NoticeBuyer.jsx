@@ -14,6 +14,7 @@ function NoticeBuyer() {
 const[notices, setNotice] = useState([])
 const fetchNotice = async () =>{
   let res = await request.post('/api/advertise' , {id : user.id})
+  
   setNotice(res)
   console.log(res)
 }
@@ -35,12 +36,20 @@ const fetchNotice = async () =>{
     let notice = request.post('/api/advertise/update',{id:id})
   }
 
+  const handleSeenAll=()=>{
+    let arr=[...notices];
+    arr.map((value,i)=>{
+      value.seen=0;
+    })
+    setNotice(arr);
+  }
+
   
   
 
   return <div className="notice">
  
-    <div className="notice__header">
+    <div style={{cursor:"pointer"}} className="notice__header" onClick={handleSeenAll}>
       <h3 className="notice-btn"> Đánh dấu đã đọc tất cả</h3>
     </div>
        
@@ -55,6 +64,7 @@ const fetchNotice = async () =>{
            <div className="notice__item-info">
                <p className="notice__item-name">{notice.name}</p>
                <p className="notice__item-description">{notice.description}</p>
+               <p>{notice.seen===0?"Đã đọc":"Chưa đọc"}</p>
            </div>
            <div className="notice__btn">
          

@@ -16,13 +16,11 @@ import SignUpSeller from 'pages/Seller/HSignUpSeller'
 import SellerCenter from './pages/Seller/SellerCenter'
 import CPLayout from './layouts/CPLayout'
 import ProductDetail from './pages/components/ProductDetail'
-<<<<<<< HEAD
+
 import VoucherDetail from './pages/Buyer/VoucherDetail/VoucherDetail'
 
-
-=======
 import local from './services/local'
->>>>>>> develop
+
 function App() {
   useEffect(()=>{
     if (local.get('user')===undefined){

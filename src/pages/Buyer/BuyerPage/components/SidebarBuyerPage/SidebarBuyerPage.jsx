@@ -83,4 +83,11 @@ const NAV = [
     color: 'danger',
     isSubNav: false,
   },
+  {
+    name: 'Shop Yêu Thích',
+    url: '/buyer/favoriteShop',
+    icon: 'fas fa-heart',
+    color: 'danger',
+    isSubNav: false,
+  }
 ]

@@ -1,0 +1,38 @@
+.voucher-item{
+     width: 30%;
+     margin: 0 auto;
+     margin-top:50px;
+     border: solid 1px #eee;
+    .voucher-header{
+        .voucher-img{
+            height:50px;
+            background-color: rgb(228, 107, 8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .voucher-body{
+        padding-left: 20px;
+        .voucher-desc{
+
+
+        }
+        .voucher-date{
+    
+        }
+        .voucher-device{
+    
+        }
+        .voucher-product{
+    
+        }
+        .voucher-payment{
+    
+        }
+        .voucher-ship{
+    
+        }
+    }
+}

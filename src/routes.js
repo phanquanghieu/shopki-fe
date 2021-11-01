@@ -1,6 +1,7 @@
 // import NoticeBuyer from 'pages/Buyer/NoticeBuyer/NoticeBuyer'
 
 // import VoucherBuyer from 'pages/Buyer/Voucher/VoucherBuyer'
+// import FavoriteShop from 'pages/Buyer/FavoriteShopBuyer'
 import React from 'react'
 
 const HomeBuyer = React.lazy(() => import('pages/Buyer/HomeBuyer'))
@@ -12,6 +13,7 @@ const PasswordBuyer = React.lazy(() => import('pages/Buyer/BuyerPage/Account/Pas
 const HomeSeller = React.lazy(() => import('pages/Seller/HomeSeller'))
 const NoticeBuyer = React.lazy(() => import('pages/Buyer/NoticeBuyer'))
 const VoucherBuyer = React.lazy(() => import('pages/Buyer/VoucherBuyer'))
+const FavoriteShop = React.lazy(() => import('pages/Buyer/FavoriteShop'))
 let routes = {}
 
 routes.buyer = [
@@ -61,6 +63,12 @@ routes.buyer = [
         path: '/buyer/voucher',
         exact: true,
         component: VoucherBuyer,
+        isProtected: true,
+      },
+      {
+        path: '/buyer/favoriteShop',
+        exact: true,
+        component: FavoriteShop,
         isProtected: true,
       }
     ],
