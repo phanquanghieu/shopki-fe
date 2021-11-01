@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/shopInformation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Buyer/HomeBuyer/HomeBuyer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Buyer/HomeBuyer/HomeBuyer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/ProfileShop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/ProfileShop.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/ProductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/ProductList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/ShopInformation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/ShopInformation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/WareHouse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/WareHouse.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/WarehouseDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/components/router/WarehouseDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/productList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/productList.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/profileShopStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/profileShopStyle.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/warehouseDetail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Seller/SellerCenter/style/warehouseDetail.scss" afterDir="false" />
-    </list>
+    <list default="true" id="be12fc74-1ec3-4ddd-90fb-d6896b1d5896" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -24,6 +24,10 @@ function HomeRouter(){
         render={(props) => <ShopInformation {...props} />}
       />
       <Route
+        exact path='/seller/home-center/product/add'
+        render={(props) => <CreateProduct {...props} />}
+      />
+      <Route
       exact path='/seller/home-center/product/add/:query/:id'
       render={(props) => <CreateProduct {...props} />}
     />
