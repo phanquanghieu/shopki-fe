@@ -9,7 +9,7 @@ import routes from 'routes'
 import './buyerLayout.scss'
 
 function BuyerLayout() {
-  console.log("vao")
+  console.log('vao')
   return (
     <>
       <BuyerLayoutHeader />

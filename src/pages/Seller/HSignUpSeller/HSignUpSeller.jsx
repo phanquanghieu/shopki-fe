@@ -53,9 +53,10 @@ function HSignUpSeller(props) {
       shopAddress,
     })
     if (res?.error === 1) return helper.toast('error', 'Loi')
-  if (res){
-    helper.toast('success', 'Tạo shop thành công')
-    history.push('/seller')
+    if (res) {
+      helper.toast('success', 'Tạo shop thành công')
+      history.push('/seller')
+    }
   }
 
   return (

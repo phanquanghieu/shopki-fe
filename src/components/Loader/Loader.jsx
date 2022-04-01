@@ -1,7 +1,13 @@
+import './loader.scss'
 function Loader() {
   return (
-    <div className='d-flex h-100 w-100 justify-content-center align-items-center text-base-color fs-3'>
-      Loading...
+    <div className='h-loader-container'>
+      <div class='h-loader'>
+        <div class='inner one'></div>
+        <div class='inner two'></div>
+        <div class='inner three'></div>
+      </div>
+      <div className='h-loader-text'>Loading</div>
     </div>
   )
 }

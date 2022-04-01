@@ -1,6 +1,6 @@
 @import 'scss/variables';
 .h-home-buyer {
-  padding: 2rem 0;
+  padding: 2rem 0 20rem;
   .h-banner {
     display: flex;
     justify-content: space-between;
@@ -102,7 +102,7 @@
 
   .h-product {
     margin-top: 3rem;
-
+    min-height: 30rem;
     .h-product__header {
       padding: 0.75rem 1.5rem;
       font-size: 1.2rem;
@@ -111,10 +111,9 @@
       box-shadow: $elevations-2;
     }
     .h-product__list {
+      margin-top: 0.5rem;
       display: flex;
       flex-wrap: wrap;
     }
- 
   }
-  
 }

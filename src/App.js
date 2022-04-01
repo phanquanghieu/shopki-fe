@@ -18,38 +18,49 @@ import CPLayout from './layouts/CPLayout'
 import ProductDetail from './pages/components/ProductDetail'
 import local from './services/local'
 function App() {
-  useEffect(()=>{
-    if (local.get('user')===undefined){
+  useEffect(() => {
+    if (local.get('user') === undefined) {
       localStorage.removeItem('user')
     }
-  },[])
+  }, [])
   return (
     <div>
       <BrowserRouter>
-        <Suspense fallback={<Loader />}>
+        <Suspense
+          fallback={
+            <div style={{ height: '80vh' }}>
+              <Loader />
+            </div>
+          }
+        >
           <Switch>
             <Route
-              exact path='/login'
+              exact
+              path='/login'
               name='Buyer Login '
               render={(props) => <LoginBuyer {...props} />}
             />
             <Route
-              exact path='/signup'
+              exact
+              path='/signup'
               name='Buyer Signup '
               render={(props) => <SignUpBuyer {...props} />}
             />
             <Route
-              exact path='/seller/login'
+              exact
+              path='/seller/login'
               name='Seller Login '
               render={(props) => <LoginSeller {...props} />}
             />
             <Route
-              exact path='/seller/register'
+              exact
+              path='/seller/register'
               name='Seller Login '
               render={(props) => <SignUpSeller {...props} />}
             />
             <Route
-              exact path='/seller'
+              exact
+              path='/seller'
               name='Seller Layout'
               render={(props) => <SellerLayout {...props} />}
             />
@@ -59,16 +70,18 @@ function App() {
               render={(props) => <SellerCenter {...props} />}
             />
             <Route
-              exact path='/admin'
+              exact
+              path='/admin'
               name='CP Layout'
               render={(props) => <CPLayout {...props} />}
             />
             <Route
-            exact path='/product-detail/:id'
-            name='CP Layout'
-            render={(props) => <ProductDetail {...props} />}
-          />
-            <Route  path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
+              exact
+              path='/product-detail/:id'
+              name='CP Layout'
+              render={(props) => <ProductDetail {...props} />}
+            />
+            <Route path='/' name='Buyer Layout' render={(props) => <BuyerLayout {...props} />} />
           </Switch>
         </Suspense>
       </BrowserRouter>

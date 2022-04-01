@@ -5,6 +5,7 @@ import React from 'react'
 
 const HomeBuyer = React.lazy(() => import('pages/Buyer/HomeBuyer'))
 const Cart = React.lazy(() => import('pages/Buyer/Cart'))
+const GroupCart = React.lazy(() => import('pages/Buyer/GroupCart'))
 const BuyerPage = React.lazy(() => import('pages/Buyer/BuyerPage'))
 const ProfileBuyer = React.lazy(() => import('pages/Buyer/BuyerPage/Account/ProfileBuyer'))
 const AddressBuyer = React.lazy(() => import('pages/Buyer/BuyerPage/Account/AddressBuyer'))
@@ -27,7 +28,13 @@ routes.buyer = [
     component: Cart,
     isProtected: false,
   },
- 
+  {
+    path: '/groupCart',
+    exact: true,
+    component: GroupCart,
+    isProtected: false,
+  },
+
   {
     path: '/buyer',
     component: BuyerPage,
@@ -37,7 +44,7 @@ routes.buyer = [
         path: '/buyer/account/profile',
         exact: true,
         component: ProfileBuyer,
-        isProtected: true ,
+        isProtected: true,
       },
       {
         path: '/buyer/account/address',
@@ -62,7 +69,7 @@ routes.buyer = [
         exact: true,
         component: VoucherBuyer,
         isProtected: true,
-      }
+      },
     ],
   },
 ]

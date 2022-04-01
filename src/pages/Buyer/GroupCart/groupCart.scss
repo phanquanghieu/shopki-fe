@@ -1,0 +1,151 @@
+@import 'scss/variables';
+.cart_buyer {
+  width: 1200px;
+
+  .cart__header {
+    display: flex;
+    border: solid 1px #efefef;
+    color: #888;
+    background-color: #fff;
+    height: 55px;
+    padding: 0 20px;
+    align-items: center;
+    font-size: 14px;
+    .cart__header-item1 {
+      width: 46%;
+    }
+    .cart__header-item2 {
+      width: 16%;
+    }
+    .cart__header-item3 {
+      width: 16%;
+    }
+    .cart__header-item4 {
+      width: 15%;
+    }
+    .cart__header-item5 {
+      width: 7%;
+    }
+  }
+
+  .cart__body {
+    .cart__list {
+      // background-color: aqua;
+      list-style: none;
+      padding-left: 0;
+      .cart__item {
+        background-color: #fff;
+        margin-top: 12px;
+        padding-left: 18px;
+        padding-right: 13px;
+        border: 1px solid #efefef;
+        padding: 0.5rem;
+        .cart__item-header {
+          height: 53px;
+
+          border-bottom: solid 1px #efefef;
+          .cart__item-tenshop {
+            line-height: 53px;
+          }
+        }
+        .cart__item-body {
+          // background-color: blue;
+          display: flex;
+          align-items: center;
+          .cart__item-info {
+            width: 45%;
+            display: flex;
+            .cart__item-checkbox {
+              align-self: center;
+              justify-self: center;
+              margin-left: 10px;
+              width: 1rem;
+              height: 1rem;
+            }
+            .cart__item-img {
+              width: 100px;
+              margin: 0 2rem;
+              border: solid 1px $base-color;
+              object-fit: contain;
+            }
+            .Cart__item-name {
+              justify-self: center;
+              align-self: center;
+
+              font-size: 1.2rem;
+            }
+          }
+          .cart__item-dongia {
+            font-size: 1.2rem;
+            font-weight: 500;
+            width: 14%;
+          }
+          .cart__item-soluong {
+            display: inline-flex;
+            width: 18%;
+
+            font-size: 1.2rem;
+            font-weight: 500;
+            .btn-primary {
+              margin: 0 12px;
+            }
+            .cart__item-soluong-text {
+              margin: 0 4px;
+            }
+            .cart__item-btn-add {
+              margin: 0 12px;
+            }
+          }
+          .cart__item-sotien {
+            width: 15%;
+
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+          .cart__item-thaotac {
+            width: 8%;
+            .cart__item-btn {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.pf-panel-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.pf-panel-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pf-panel-label {
+  font-size: 1.2rem;
+}
+.pf-panel-url-value {
+  margin-left: 30px;
+  width: calc(300px);
+  height: 35px;
+  padding: 8px 10px;
+  background-color: $gray-300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-panel-url-btn {
+  height: 35px;
+  width: 60px;
+  margin-left: 5px;
+  border: 2px solid $info;
+  background-color: transparent;
+  color: $info;
+  transition: ease-in 0.2s;
+}
+.pf-panel-url-btn:hover {
+  background-color: $info;
+  color: $white;
+}
+.pf-panel-url-btn:focus {
+  outline: none;
+}

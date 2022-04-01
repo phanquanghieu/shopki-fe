@@ -1,12 +1,23 @@
-import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import auth from 'services/auth'
 import helper from 'services/helper'
 import local from 'services/local'
 
 function BuyerLayoutHeader() {
   const history = useHistory()
+  const location = useLocation()
   const user = auth.getUser()
+
+  const [input, setInput] = useState(new URLSearchParams(location.search).get('name'))
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    history.push({
+      pathname: '',
+      search: `?name=${input}`,
+    })
+  }
 
   const handleLogout = () => {
     local.clear()
@@ -54,7 +65,7 @@ function BuyerLayoutHeader() {
             ) : (
               <div className='h-header-top__item h-dropdown h-dropdown--profile'>
                 <div className='h-header-top__link h-dropdown__toggle'>
-                  <i className='fas fa-user'></i> {user.name?user.name:user.phone}
+                  <i className='fas fa-user'></i> {user.name ? user.name : user.phone}
                 </div>
                 <div className='h-dropdown__menu'>
                   <div className='h-menu__item'>
@@ -75,15 +86,24 @@ function BuyerLayoutHeader() {
           <Link to='/' className='h-header__brand'>
             ShopKi
           </Link>
-          <div className='h-header__search'>
-            <input className='h-search__input' type='text' placeholder='Tìm kiếm trên ShopKi' />
-            <button className='h-search__btn'>
+
+          <form onSubmit={handleSearch} className='h-header__search'>
+            {/* <div className='h-header__search'> */}
+            <input
+              className='h-search__input'
+              type='text'
+              placeholder='Tìm kiếm trên ShopKi'
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+            <button type='submit' className='h-search__btn'>
               <i className='fas fa-search'></i>
             </button>
-          </div>
+            {/* </div> */}
+          </form>
           <div className='h-header__cart'>
             <div className='h-dropdown h-dropdown--cart'>
-              <Link to='/cart' className='h-cart__icon h-dropdown__toggle'>
+              <Link to='/groupCart' className='h-cart__icon h-dropdown__toggle'>
                 <i className='fas fa-cart-arrow-down'></i>
                 <div className='h-cart__amount'>299</div>
               </Link>
